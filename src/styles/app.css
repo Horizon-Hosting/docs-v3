@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
+@import './horizon-fumadocs.css';
+/* last — and it has no @import inside */
+
 
 html {
   scrollbar-gutter: stable;
