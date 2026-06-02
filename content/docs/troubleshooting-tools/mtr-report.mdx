@@ -1,0 +1,27 @@
+---
+title: MTR Report
+---
+
+## What is a MTR Report?
+
+A MTR (My Traceroute) Report is a network diagnostic tool. This allows a technician to view the path a packet takes from a source to a destination across the internet. This form of report allows us to collect data over a period of time. This report can show us the reliability of a network and where specifically issues may occur.
+
+## How to produce a report
+
+### Windows
+
+
+1. Download and extract [WinMTR](https://sourceforge.net/projects/winmtr/files/latest/download) to a folder on your computer.
+2. Open the `WinMTR_x64` folder
+3. Run `WinMTR.exe`
+4. Enter the hostname or IP address provided to you into the textbox labelled Host
+5. Click the Start button
+6. After 5 minutes click the Stop button
+7. Click the Export TEXT button and save the file to your computer
+8. Upload the file to your technician
+
+### Linux
+
+
+1. Run `mtr -w -c 75 <address>` in your terminal
+2. Once complete, send the results to your technician 
