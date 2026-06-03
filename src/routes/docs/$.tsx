@@ -16,6 +16,7 @@ import { gitConfig } from '@/lib/shared';
 import { useFumadocsLoader } from 'fumadocs-core/source/client';
 import { Suspense } from 'react';
 import { useMDXComponents } from '@/components/mdx';
+import { getPageImage } from '@/lib/source.client';
 
 export const Route = createFileRoute('/docs/$')({
   component: Page,
@@ -39,6 +40,9 @@ const serverLoader = createServerFn({
       path: page.path,
       markdownUrl: slugsToMarkdownPath(page.slugs).url,
       pageTree: await source.serializePageTree(source.getPageTree()),
+      slugs: page.slugs,
+      title: page.data.title,
+      description: page.data.description,
     };
   });
 
@@ -74,11 +78,21 @@ const clientLoader = browserCollections.docs.createClientLoader({
 });
 
 function Page() {
-  const { path, pageTree, markdownUrl } = useFumadocsLoader(Route.useLoaderData());
+  const { path, pageTree, markdownUrl, slugs, title, description } = useFumadocsLoader(Route.useLoaderData());
 
   return (
-    <DocsLayout {...baseOptions()} tree={pageTree}>
-      <Suspense>{clientLoader.useContent(path, { markdownUrl, path })}</Suspense>
-    </DocsLayout>
+    <>
+      <meta property="og:title" content={title} />
+      {description && <meta property="og:description" content={description} />}
+      <meta property="og:image" content={getPageImage(slugs).url} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      {description && <meta name="twitter:description" content={description} />}
+      <meta name="twitter:image" content={getPageImage(slugs).url} />
+      <DocsLayout {...baseOptions()} tree={pageTree}>
+        <Suspense>{clientLoader.useContent(path, { markdownUrl, path })}</Suspense>
+      </DocsLayout>
+    </>
+
   );
 }
