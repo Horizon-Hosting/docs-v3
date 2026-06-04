@@ -1,4 +1,4 @@
 {
-	"title": "BeamMP",
-	"pagesIndex": "getting-started/index"
+  "title": "BeamMP",
+  "pages": ["getting-started", "migrating", "advanced-configuration", "..."]
 }

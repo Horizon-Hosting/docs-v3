@@ -1,4 +1,4 @@
 {
-	"title": "Minecraft",
-	"pagesIndex": "getting-started"
+  "title": "Minecraft",
+  "pages": ["getting-started", "migrating", "advanced-configuration", "..."]
 }

@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "types:check": "fumadocs-mdx && tsc --noEmit",
     "postinstall": "fumadocs-mdx",
-    "lint": "oxlint"
+    "lint": "oxlint",
+    "lint:links": "bun ./scripts/lintLinks.ts",
+    "export:embedding": "bun ./scripts/parseContentForEmbedding.ts"
   },
   "dependencies": {
     "@takumi-rs/image-response": "^1.6.0",
@@ -20,6 +22,8 @@
     "fumadocs-core": "16.9.3",
     "fumadocs-mdx": "15.0.10",
     "fumadocs-ui": "16.9.3",
+    "glob": "^13.0.6",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
