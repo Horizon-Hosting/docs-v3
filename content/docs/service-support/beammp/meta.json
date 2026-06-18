@@ -1,4 +1,10 @@
 {
   "title": "BeamMP",
-  "pages": ["getting-started", "migrating", "advanced-configuration", "..."]
+  "pages": [
+    "getting-started",
+    "migrating",
+    "advanced-configuration",
+    "updating-beammp-server",
+    "..."
+  ]
 }
