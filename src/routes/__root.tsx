@@ -14,7 +14,11 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Fumadocs on TanStack Start',
+        title: 'Horizon Hosting Docs',
+      },
+      {
+        name: 'description',
+        content: 'Guides and reference docs for Horizon Hosting game servers and VPS hosting.',
       },
     ],
     links: [{ rel: 'stylesheet', href: appCss }],

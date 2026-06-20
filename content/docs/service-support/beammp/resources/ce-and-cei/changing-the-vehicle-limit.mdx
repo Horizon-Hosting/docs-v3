@@ -1,0 +1,65 @@
+---
+title: Changing the Vehicle Limit
+description: How to change the maximum vehicle limit for users in BeamMP
+type: How To
+---
+
+## Navigate to CobaltDB [step]
+Navigate to your server directory and open `permissions.json`, located at:
+`Resources/Server/CobaltEssentials/CobaltDB/permissions.json`
+
+## Change the max vehicle limit [step]
+Locate the `"vehicleCap"` section of the file. Inside, you will see a list of permission levels (groups) and their associated vehicle limits.
+
+:::warning[Please Read!]
+This file uses **JSON** formatting. Because of this, you must maintain correct syntax so the resource doesn't break. 
+
+A common mistake is leaving a **trailing comma** on the last item in a list. Never put a comma after the final element.
+
+**Incorrect:** `{"a": 1, "b": 2,}`  
+**Correct:** `{"a": 1, "b": 2}`
+:::
+
+You can change the max limit for a group by modifying or adding the group level and its limit. For example:
+
+```json
+"vehicleCap": {  
+  "1": 20,
+  "5": 30,
+  "9": 45,
+  "10": 60,
+  "description": "The amount of vehicles that may be spawned based on permission level."
+}
+
+```
+
+Based on the example above, the following rules will apply:
+
+* **Groups with level 1:** Limit of 20 vehicles
+* **Groups with level 5:** Limit of 30 vehicles
+* **Groups with level 9:** Limit of 45 vehicles
+* **Groups with level 10:** Limit of 60 vehicles
+
+## Save the file and restart the server [step]
+
+Save the changes to `permissions.json` and restart your BeamMP server for the changes to take effect.
+
+## Common Issues
+
+### CobaltEssentials overrides changes on restart
+
+**Cause:** CobaltEssentials keeps configuration data cached in memory. If you modify `permissions.json` while the server is actively running and then use the server console to shut down or restart, the plugin will overwrite your manual edits with its cached settings.
+
+**Fix:** Always completely **Stop** the server via your panel or console *before* opening and editing the `permissions.json` file.
+
+### Specific players still have a lower limit than their group allows
+
+**Cause:** CobaltEssentials permits setting individual player caps that completely bypass group rules. If a player was manually restricted in the past, their unique Steam ID entry in `playerPermissions.json` will override the group `vehicleCap` setting you just configured.
+
+**Fix:** Open `Resources/Server/CobaltEssentials/CobaltDB/playerPermissions.json`. Locate the player's Steam ID and check if they have a personal `"vehicleCap"` line assigned to them. Delete that line or change it to `-1` to force them to inherit the group default.
+
+### The entire plugin stops working (JSON structural wipe)
+
+**Cause:** If you make a syntax error in `permissions.json` (like a missing bracket or a bad comma) and start the server, CobaltEssentials won't be able to read the file. When it fails to parse, it will often completely wipe the file back to its default factory settings to prevent a crash.
+
+**Fix:** Always keep a quick backup copy of your edited text before hitting save. You can paste your code into a free online tool like [JSONLint](https://jsonlint.com/) to verify it is valid before booting up the server.

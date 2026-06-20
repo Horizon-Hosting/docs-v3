@@ -19,8 +19,8 @@ try {
 }
 
 function getPrerenderRoutes() {
-  const routes: string[] = ['/'];
-  const getUrl = createGetUrl('/docs');
+  const routes: string[] = [];
+  const getUrl = createGetUrl('');
 
   const entries = globSync('**/*.mdx', { cwd: 'content/docs' });
 

@@ -9,14 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Char123Char125DotmdRouteImport } from './routes/{$}[.]md'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as DocsChar123Char125DotmdRouteImport } from './routes/docs/{$}[.]md'
-import { Route as DocsSplatRouteImport } from './routes/docs/$'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as ApiSearchRouteImport } from './routes/api/search'
 import { Route as OgDocsSplatImageWebpRouteImport } from './routes/og/docs/$.image.webp'
 
+const Char123Char125DotmdRoute = Char123Char125DotmdRouteImport.update({
+  id: '/{$}.md',
+  path: '/{$}.md',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
@@ -27,19 +37,9 @@ const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
   path: '/llms-full.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsChar123Char125DotmdRoute = DocsChar123Char125DotmdRouteImport.update({
-  id: '/docs/{$}.md',
-  path: '/docs/{$}.md',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsSplatRoute = DocsSplatRouteImport.update({
-  id: '/docs/$',
-  path: '/docs/$',
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSearchRoute = ApiSearchRouteImport.update({
@@ -54,75 +54,89 @@ const OgDocsSplatImageWebpRoute = OgDocsSplatImageWebpRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/{$}.md': typeof Char123Char125DotmdRoute
   '/api/search': typeof ApiSearchRoute
-  '/docs/$': typeof DocsSplatRoute
-  '/docs/{$}.md': typeof DocsChar123Char125DotmdRoute
   '/og/docs/$/image/webp': typeof OgDocsSplatImageWebpRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/{$}.md': typeof Char123Char125DotmdRoute
   '/api/search': typeof ApiSearchRoute
-  '/docs/$': typeof DocsSplatRoute
-  '/docs/{$}.md': typeof DocsChar123Char125DotmdRoute
   '/og/docs/$/image/webp': typeof OgDocsSplatImageWebpRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/{$}.md': typeof Char123Char125DotmdRoute
   '/api/search': typeof ApiSearchRoute
-  '/docs/$': typeof DocsSplatRoute
-  '/docs/{$}.md': typeof DocsChar123Char125DotmdRoute
   '/og/docs/$/image/webp': typeof OgDocsSplatImageWebpRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
+    | '/$'
     | '/llms-full.txt'
     | '/llms.txt'
+    | '/sitemap.xml'
+    | '/{$}.md'
     | '/api/search'
-    | '/docs/$'
-    | '/docs/{$}.md'
     | '/og/docs/$/image/webp'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
+    | '/$'
     | '/llms-full.txt'
     | '/llms.txt'
+    | '/sitemap.xml'
+    | '/{$}.md'
     | '/api/search'
-    | '/docs/$'
-    | '/docs/{$}.md'
     | '/og/docs/$/image/webp'
   id:
     | '__root__'
-    | '/'
+    | '/$'
     | '/llms-full.txt'
     | '/llms.txt'
+    | '/sitemap.xml'
+    | '/{$}.md'
     | '/api/search'
-    | '/docs/$'
-    | '/docs/{$}.md'
     | '/og/docs/$/image/webp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  Char123Char125DotmdRoute: typeof Char123Char125DotmdRoute
   ApiSearchRoute: typeof ApiSearchRoute
-  DocsSplatRoute: typeof DocsSplatRoute
-  DocsChar123Char125DotmdRoute: typeof DocsChar123Char125DotmdRoute
   OgDocsSplatImageWebpRoute: typeof OgDocsSplatImageWebpRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/{$}.md': {
+      id: '/{$}.md'
+      path: '/{$}.md'
+      fullPath: '/{$}.md'
+      preLoaderRoute: typeof Char123Char125DotmdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/llms.txt': {
       id: '/llms.txt'
       path: '/llms.txt'
@@ -137,25 +151,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LlmsFullDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/{$}.md': {
-      id: '/docs/{$}.md'
-      path: '/docs/{$}.md'
-      fullPath: '/docs/{$}.md'
-      preLoaderRoute: typeof DocsChar123Char125DotmdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/$': {
-      id: '/docs/$'
-      path: '/docs/$'
-      fullPath: '/docs/$'
-      preLoaderRoute: typeof DocsSplatRouteImport
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/search': {
@@ -176,12 +176,12 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   LlmsFullDottxtRoute: LlmsFullDottxtRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  Char123Char125DotmdRoute: Char123Char125DotmdRoute,
   ApiSearchRoute: ApiSearchRoute,
-  DocsSplatRoute: DocsSplatRoute,
-  DocsChar123Char125DotmdRoute: DocsChar123Char125DotmdRoute,
   OgDocsSplatImageWebpRoute: OgDocsSplatImageWebpRoute,
 }
 export const routeTree = rootRouteImport

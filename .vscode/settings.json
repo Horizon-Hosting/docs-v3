@@ -1,0 +1,13 @@
+{
+	"cSpell.words": [
+		"gamemode",
+		"gamemodes",
+		"GSLT"
+	],
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
+	"[mdx]": {
+		"editor.formatOnSave": false
+	}
+}

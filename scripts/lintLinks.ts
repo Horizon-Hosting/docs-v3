@@ -17,7 +17,7 @@ async function checkLinks() {
 
   const scanned = await scanURLs({
     preset: "tanstack-start",
-    pages: ["", "docs/[[..._splat]]", "blog/[slug]"],
+    pages: ["[[..._splat]]", "blog/[slug]"],
     populate: {
       "blog/[slug]": blogFiles.map((file) => {
         return {
@@ -27,7 +27,7 @@ async function checkLinks() {
           ),
         };
       }),
-      "docs/[[..._splat]]": docsFiles.map((file) => {
+      "[[..._splat]]": docsFiles.map((file) => {
         return {
           value: getSlugs(path.relative("content/docs", file.path)),
           hashes: getTableOfContents(file.content).map((item) =>
@@ -38,12 +38,32 @@ async function checkLinks() {
     },
   });
 
-  printErrors(
-    await validateFiles([...docsFiles, ...blogFiles], {
-      scanned,
-    }),
-    true,
-  );
+  const files = [...docsFiles, ...blogFiles];
+
+  // links: internal only
+  const linkResults = await validateFiles(files, {
+    scanned,
+    markdown: {
+      onNode(node) {
+        if (node.type === "link") return { hrefs: [node.url] };
+        return { hrefs: [] };
+      },
+    },
+  });
+
+  // images: internal and external
+  const imageResults = await validateFiles(files, {
+    scanned,
+    checkExternal: true,
+    markdown: {
+      onNode(node) {
+        if (node.type === "image") return { hrefs: [node.url] };
+        return { hrefs: [] };
+      },
+    },
+  });
+
+  printErrors([...linkResults, ...imageResults], true);
 }
 
 void checkLinks();

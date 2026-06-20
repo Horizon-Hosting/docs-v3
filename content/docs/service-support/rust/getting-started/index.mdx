@@ -1,28 +1,33 @@
 ---
 title: Getting Started
 description: Your first steps towards setting up your Rust service.
-type: How-To
+type: How To
 ---
 
-## Get a GSLT [step]
-If you would like your server to be public, you will need to get a GSLT from steam's [game server account management page](https://steamcommunity.com/dev/managegameservers).
-For more details about this, you can view [our guide on how to get a GSLT](/docs/service-support/garrys-mod/getting-started/getting-a-gslt).
+## Get a GSLT \[step]
 
-## Add a collection [step]
+If you would like your server to be public, you will need to get a GSLT from steam's [game server account management page](https://steamcommunity.com/dev/managegameservers).
+For more details about this, you can view [our guide on how to get a GSLT](/service-support/garrys-mod/getting-started/getting-a-gslt).
+
+## Add a collection \[step]
+
 A collection is a user-made list of workshop content. If you have one of these, you can put it in the startup section of your service under "Workshop ID", this will automatically download all content from the collection to your server and serve it to players who join.
 
 You can get your collection id by viewing the collection in the browser, from there you will need to copy the numbers after `id=`.
 
 e.g. `https://steamcommunity.com/sharedfiles/filedetails/?id={COPY_ME}`
 
-## Install a Gamemode [step]
+## Install a Gamemode \[step]
+
 You may wish to install a gamemode, if there is any documentation for installing the gamemode given by the creators of it, we reccomend following this.
 
 We have made some tailored guides for certain gamemodes:
-- [DarkRP](/docs/service-support/garrys-mod/installing-a-gamemode/darkrp)
-- [StarWarsRP](/ducks)
 
-## Install file-based addons [step]
+* [DarkRP](/service-support/garrys-mod/installing-a-gamemode/darkrp)
+* [StarWarsRP](/ducks)
+
+## Install file-based addons \[step]
+
 You may also have file-based addons, these are usually addons found on marketplaces or GitHub. To install an addon to your server, you will need to drag the folder or compressed file into the `garrysmod/addons` folder.
 
 If the file is compressed, you will need to extract it so only the folder is in the addons folder.

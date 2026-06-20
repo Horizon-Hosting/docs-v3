@@ -80,7 +80,7 @@ function generateDocsJson() {
 			if (frontmatter.type == null) continue;
 
 			const urlSlug = filePath.replace('content/docs/', '').replace(/\.mdx?$/, '');
-			const baseUrl = `https://docs.hrznhosting.com/docs/${urlSlug}`;
+			const baseUrl = `https://docs.hrznhosting.com/${urlSlug}`;
 			const pageTitle = frontmatter.title || urlSlug;
 
 			const cleanedBody = cleanMdxForAI(rawBody);

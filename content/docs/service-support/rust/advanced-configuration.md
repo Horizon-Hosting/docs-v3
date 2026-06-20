@@ -1,5 +1,5 @@
 ---
 title: Advanced Configuration
-description: Extra details about configurable options with your service.
+description: Configurable options for your Rust server, including server.cfg and startup parameters.
 type: Quick Reference
 ---
