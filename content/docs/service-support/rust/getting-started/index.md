@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Your first steps towards setting up your Garry's Mod service.
+description: Your first steps towards setting up your Rust service.
 type: How To
 ---
 
@@ -20,11 +20,6 @@ e.g. `https://steamcommunity.com/sharedfiles/filedetails/?id={COPY_ME}`
 ## Install a Gamemode \[step]
 
 You may wish to install a gamemode, if there is any documentation for installing the gamemode given by the creators of it, we reccomend following this.
-
-We have made some tailored guides for certain gamemodes:
-
-* [DarkRP](/service-support/garrys-mod/installing-a-gamemode/darkrp)
-* [StarWarsRP](/ducks)
 
 ## Install file-based addons \[step]
 

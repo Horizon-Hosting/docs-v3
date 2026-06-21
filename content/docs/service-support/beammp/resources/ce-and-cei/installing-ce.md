@@ -19,7 +19,7 @@ Navigate to the game panel and select the "Mods" section via the sidebar.
 ### Install the mod [step]
 Click install on "Cobalt Essentials" and wait for it to finish installing.
 
-### Done 🎉 [step]
+### 🎉 Done [step]
 Restart your service and the mod should appear.
 
 ## Installing manually
@@ -33,7 +33,7 @@ Upload the downloaded ZIP using either SFTP or the file manager to the `/Resourc
 ### Unzip the file [step]
 Once the file has been uploaded, unzip the file and delete the .ZIP file, leaving only the folder.
 
-### Done 🎉 [step]
+### 🎉 Done [step]
 Restart your service and the mod should appear.
 
 ## Configuring the resource
@@ -48,4 +48,4 @@ We do not recommend giving anyone other than users you trust this role as it giv
 You can set a user as owner by entering the following command into the console: `ce setgroup yourName owner`, replacing `yourName` with your username.
 
 ### Installing CEI
-A common addition to Cobalt Essentials is the interface extension. This allows users to access Cobalt Essentials via a user friendly interface. [Read our guide](/service-support/beammp/installing-mods/ce-and-cei/installing-cei) to learn more.
+A common addition to Cobalt Essentials is the interface extension. This allows users to access Cobalt Essentials via a user friendly interface. [Read our guide](/service-support/beammp/resources/ce-and-cei/installing-cei) to learn more.

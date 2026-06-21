@@ -129,6 +129,19 @@
 /* Optional: widen the docs column a touch for code-heavy pages */
 /* :root { --fd-layout-width: 1480px; } */
 
+/* Mobile sidebar drawer: both the overlay and the drawer panel itself rely on
+   --color-fd-background, which the cosmic backdrop below sets to `transparent`
+   in dark mode, leaving the page behind it too visible. --color-fd-card is the
+   same dark surface color used by popovers/menus and isn't affected by that
+   override, so use it here instead for a properly opaque drawer. */
+.fixed.inset-0.backdrop-blur-xs[data-state] {
+  background-color: color-mix(in srgb, var(--color-fd-card) 85%, transparent);
+}
+
+.fixed.inset-e-0.inset-y-0.shadow-lg[data-state] {
+  background-color: var(--color-fd-card);
+}
+
 /* ============================================================================
    SIGNATURE TOUCHES  —  intensity
    ----------------------------------------------------------------------------

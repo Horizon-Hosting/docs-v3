@@ -24,7 +24,7 @@ Navigate to the game panel and select the "Mods" section via the sidebar.
 ### Install the mod [step]
 Click install on "Cobalt Essentials Interface" and wait for it to finish installing.
 
-### Done 🎉 [step]
+### 🎉 Done [step]
 Restart your service and the mod should appear.
 
 ## Installing manually
@@ -43,7 +43,7 @@ Once the file has been uploaded, unzip the file and delete the .ZIP file, leavin
 ### Add the extension to CE [step]
 Navigate to and open `/Resources/Server/CobaltEssentials/LoadExtensions.cfg`, then add `CEI = "CEI"` to the bottom of the file.
 
-### Done 🎉 [step]
+### 🎉 Done [step]
 Restart your service and the mod should appear.
 
 ## Using the interface

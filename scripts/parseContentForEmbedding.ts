@@ -1,7 +1,7 @@
 import path from 'node:path';
 import matter from 'gray-matter';
 import { globSync } from 'glob';
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 
 interface DocChunk {
 	sectionHeading: string;
@@ -31,7 +31,7 @@ function cleanMdxForAI(rawBody: string): string {
 	return cleanText.trim();
 }
 
-function chunkMarkdown(cleanText: string, baseUrl: string, pageTitle: string): DocChunk[] {
+function chunkMarkdown(cleanText: string, baseUrl: string): DocChunk[] {
 	const chunks: DocChunk[] = [];
 	const sections = cleanText.split(/(?=\n?^#{1,3}\s+)/m);
 
@@ -84,7 +84,7 @@ function generateDocsJson() {
 			const pageTitle = frontmatter.title || urlSlug;
 
 			const cleanedBody = cleanMdxForAI(rawBody);
-			const fileChunks = chunkMarkdown(cleanedBody, baseUrl, pageTitle);
+			const fileChunks = chunkMarkdown(cleanedBody, baseUrl);
 
 			allChunks.push({
 				pageTitle: pageTitle,

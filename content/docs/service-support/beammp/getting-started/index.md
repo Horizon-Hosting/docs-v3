@@ -1,13 +1,14 @@
 ---
 title: Getting Started
 description: Your first steps towards setting up your BeamMP service.
+icon: Rocket  
 type: How To
 ---
 
 :::tip[Temporary Change]
 Due to BeamMP's disruption with their account services, you will need to run your service with allow guests enabled.
 
-For more details, you can read [our guide on how to enable guests](/service-support/beammp/common-issues/allow-guest).
+For more details, you can read [our guide on how to enable guests](/service-support/beammp/common-issues/allow-guests).
 :::
 
 ## Getting a server key \[step]

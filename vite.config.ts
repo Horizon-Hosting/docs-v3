@@ -16,13 +16,14 @@ try {
   optionalDeps = packageJson.optionalDependencies ? Object.keys(packageJson.optionalDependencies) : [];
 } catch (e) {
   console.warn('Could not read @takumi-rs/core package.json for optional dependencies extraction.');
+  console.warn(e);
 }
 
 function getPrerenderRoutes() {
   const routes: string[] = [];
   const getUrl = createGetUrl('');
 
-  const entries = globSync('**/*.mdx', { cwd: 'content/docs' });
+  const entries = globSync('**/*.{md,mdx}', { cwd: 'content/docs' });
 
   for (const entry of entries) {
     const slugs = getSlugs(entry);

@@ -1,13 +1,8 @@
-const MARK = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-<defs>
-<linearGradient id="n" x1="6" y1="8" x2="42" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#7B5CFF"/><stop offset=".52" stop-color="#E84CC4"/><stop offset="1" stop-color="#FF6B3D"/></linearGradient>
-<linearGradient id="r" x1="4" y1="24" x2="44" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#7B5CFF"/><stop offset="1" stop-color="#FFB020"/></linearGradient>
-</defs>
-<circle cx="24" cy="24" r="10.5" fill="url(#n)"/>
-<circle cx="28.5" cy="21.5" r="10.5" fill="#070514" opacity=".16"/>
-<g transform="rotate(-24 24 24)"><ellipse cx="24" cy="24" rx="21" ry="8.2" stroke="url(#r)" stroke-width="2.4" fill="none"/><circle cx="45" cy="24" r="2.6" fill="#FFB020"/></g>
-</svg>`;
-const MARK_URI = `data:image/svg+xml,${encodeURIComponent(MARK)}`;
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const LOGO_SVG = readFileSync(join(process.cwd(), 'public/logos/logo_dark.svg'), 'utf-8');
+const LOGO_URI = `data:image/svg+xml,${encodeURIComponent(LOGO_SVG)}`;
 
 const STARS: [number, number, number, number, string][] = [
 	[7, 18, 2, 0.7, '#FFFFFF'], [14, 62, 1.5, 0.5, '#FFD980'], [21, 33, 2, 0.6, '#FFFFFF'], [27, 78, 1.5, 0.4, '#B194FF'],
@@ -47,12 +42,6 @@ export function OgCard({
 					+ 'radial-gradient(50% 60% at 6% 108%, rgba(255,107,61,0.18), rgba(255,107,61,0) 55%)'
 			}} />
 
-			<div style={{
-				position: 'absolute', right: '-150px', top: '150px', width: '520px', height: '520px',
-				display: 'flex', borderRadius: '50%', opacity: 0.22,
-				backgroundImage: 'linear-gradient(135deg, #7B5CFF 0%, #E84CC4 50%, #FF6B3D 100%)'
-			}} />
-
 			{STARS.map(([x, y, s, o, c], i) => (
 				<div key={i} style={{
 					position: 'absolute', left: `${x * 12}px`, top: `${y * 6.3}px`,
@@ -72,12 +61,8 @@ export function OgCard({
 				zIndex: 1, // Ensures text stays structural and above backgrounds
 			}}>
 				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-					<div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-						<img src={MARK_URI} width={44} height={44} alt="" />
-						<div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', fontFamily: 'Space Grotesk' }}>
-							<span style={{ fontSize: '27px', fontWeight: 600, color: '#F4F1FF' }}>Horizon</span>
-							<span style={{ fontSize: '27px', fontWeight: 500, color: '#8A82AE' }}>Hosting</span>
-						</div>
+					<div style={{ display: 'flex', alignItems: 'center' }}>
+						<img src={LOGO_URI} width={172} height={44} alt="Horizon Hosting" />
 					</div>
 				</div>
 

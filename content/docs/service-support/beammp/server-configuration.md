@@ -1,13 +1,14 @@
 ---
-title: Advanced Configuration
+title: Server Configuration
 description: Extra details about configurable options with your service.
+icon: Settings
 type: Quick Reference
 ---
 
 ## Startup Values
 
 :::tip[Top-Tip]
-Both Name & Description support decorators, this allows you to change the colour and add font styles to it. View [our guide on the topic](/service-support/beammp/advanced-configuration#server-namedescription-decorations).
+Both Name & Description support decorators, this allows you to change the colour and add font styles to it. View [our guide on the topic](/service-support/beammp/server-configuration#server-namedescription-decorations).
 :::
 
 | **Name**           | **Description**                                                                                                                                                                         | **Example**                            |
@@ -33,7 +34,7 @@ Both Name & Description support decorators, this allows you to change the colour
 | Private            | **Reference Only**, please set via the startup values                                                                            | `false`                                |
 | InformationPacket  | Allow unauthenticated clients to get the same info as on the server listing but directly via the server.                         | `false`                                |
 | Name               | **Reference Only**, please set via the startup values                                                                            | `My Server`                            |
-| Tags               | List of tags for searching, [view allowed list below](/service-support/beammp/advanced-configuration#list-of-allowed-tags). |                                        |
+| Tags               | List of tags for searching, [view allowed list below](/service-support/beammp/server-configuration#list-of-allowed-tags). |                                        |
 | MaxCars            | **Reference Only**, please set via the startup values                                                                            |                                        |
 | MaxPlayers         | **Reference Only**, please set via the startup values                                                                            |                                        |
 | Map                | **Reference Only**, please set via the startup values                                                                            |                                        |

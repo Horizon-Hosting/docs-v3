@@ -1,6 +1,7 @@
 ---
 title: Migrating to Horizon
 description: How to move your server from another hosting provider to Horizon Hosting.
+icon: CloudDownload
 type: How To
 ---
 
@@ -10,21 +11,17 @@ You will need to download any important data from your old provider.
 
 We have provided a list of common places for data to be stored (this is not exhaustive):
 
-* `garrysmod/addons`
-* `garrysmod/gamemodes`
-* `garrysmod/data`
-* `garrysmod/cfg`
-* `garrysmod/lua/autorun`
-* `garrysmod/lua/bin`
-* `garrysmod/sv.db`
+* `/Resource/`
+* `ServerConfig.toml`
 
 ## Save any server panel configurations \[step]
 
 We reccomend you save any configuratins made on the panel. These could be any of the following:
 
-* GSLT Token
-* Steam Community Collection ID
-* Extra Arguments
+* Authentication Key (Serverlist Key)
+* Server Name
+* Server Description
+* Map Path
 
 ## Backup & Migrate Databases \[step]
 

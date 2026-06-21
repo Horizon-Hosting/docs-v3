@@ -2,6 +2,7 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-r
 import * as React from 'react';
 import appCss from '@/styles/app.css?url';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
+import { SidebarExclusiveFolders } from '@/lib/sidebar-exclusive-folders';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -34,6 +35,7 @@ function RootComponent() {
       </head>
       <body className="flex flex-col min-h-screen">
         <RootProvider>
+          <SidebarExclusiveFolders />
           <Outlet />
         </RootProvider>
         <Scripts />
