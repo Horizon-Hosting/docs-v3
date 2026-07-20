@@ -1,3 +1,4 @@
 {
-	"title": "Troubleshooting Tools"
+	"title": "Troubleshooting Tools",
+	"pages": ["icmp-test", "mtr-report", "..."]
 }

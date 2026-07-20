@@ -11,8 +11,20 @@ export const docs = defineDocs({
   },
 });
 
+// Legal docs use numbered headings (e.g. "1. Changes to this Policy") purely as
+// clause numbering, not as sequential steps, so they're excluded from remarkSteps
+// to avoid being rendered as a step-by-step UI.
+function remarkStepsExceptLegal() {
+  const transformer = remarkSteps() as (tree: any, file: any) => void;
+  return (tree: any, file: any) => {
+    const path: string = file?.path ?? '';
+    if (/[\\/]legal[\\/]/.test(path)) return;
+    return transformer(tree, file);
+  };
+}
+
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkSteps, remarkDirectiveAdmonition, remarkDirective]
+    remarkPlugins: [remarkStepsExceptLegal, remarkDirectiveAdmonition, remarkDirective]
   }
 });

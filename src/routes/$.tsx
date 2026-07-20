@@ -8,7 +8,6 @@ import {
   DocsDescription,
   DocsPage,
   DocsTitle,
-  ViewOptionsPopover,
 } from 'fumadocs-ui/layouts/notebook/page';
 import { baseOptions } from '@/lib/layout.shared';
 import { useFumadocsLoader } from 'fumadocs-core/source/client';
@@ -91,9 +90,6 @@ const clientLoader = browserCollections.docs.createClientLoader({
       <DocsPage toc={toc} tableOfContent={{ style: 'clerk' }}>
         <DocsTitle>{frontmatter.title}</DocsTitle>
         <DocsDescription>{frontmatter.description}</DocsDescription>
-        <div className="flex flex-row gap-2 items-center border-b -mt-4 pb-6">
-          <ViewOptionsPopover />
-        </div>
         <DocsBody>
           <MDX components={useMDXComponents()} />
         </DocsBody>

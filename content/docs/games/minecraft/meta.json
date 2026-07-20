@@ -1,0 +1,16 @@
+{
+  "title": "Minecraft",
+  "pages": [
+    "getting-started",
+    "migrating",
+    "server-configuration",
+    "mods",
+    "plugins",
+    "how-much-ram-do-i-need",
+    "changing-minecraft-version",
+    "creating-a-timings-report",
+    "erasing-your-server",
+    "common-issues",
+    "..."
+  ]
+}

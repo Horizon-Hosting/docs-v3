@@ -1,0 +1,25 @@
+---
+title: Updating your BeamMP server
+description: How to update your BeamMP server.
+type: How To
+---
+
+BeamMP servers will notify you if they need an update via the server console.
+
+The message usually looks similar to: `NEW VERSION IS OUT! Please update to the new version (vX.X.X).`
+
+Please note, **no data should be lost during the update**, however we reccomend you take a backup of your server in case you wish to revert due to incompatibilities with mods.
+
+## Go to the game panel \[step]
+
+To begin, you will need to navigate to [the game panel](https://panel.hrznhosting.com/) and go to the settings tab.
+
+## Click reinstall \[step]
+
+Click reinstall server and confirm the dialog.
+
+## Wait for completion \[step]
+
+Your server will now automatically install the latest version, after it has finished you may start your server. It should now be up-to-date.
+
+If you have any issues updating, please [contact us](/general/contact-us).

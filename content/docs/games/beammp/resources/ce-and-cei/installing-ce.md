@@ -1,0 +1,51 @@
+---
+title: Installing Cobalt Essentials
+description: Installing and performing basic configuration of Cobalt Essentials.
+type: How To
+---
+
+## What is Cobalt Essentials
+
+Cobalt Essentials is a moderation resource similar to Nickel. You can use a tool like this to ban/mute users, create roles, and regulate user behavior via permissions.
+
+### Requirements
+- A BeamMP server running any `3.x.x` version.
+
+## Installing via the mod manager (recommended)
+
+### Navigate to the game panel [step]
+Navigate to the game panel and select the "Mods" section via the sidebar.
+
+### Install the mod [step]
+Click install on "Cobalt Essentials" and wait for it to finish installing.
+
+### 🎉 Done [step]
+Restart your service and the mod should appear.
+
+## Installing manually
+
+### Download Cobalt Essentials [step]
+Download Cobalt Essentials [by clicking here](https://github.com/prestonelam2003/CobaltEssentials/archive/refs/heads/master.zip), or via their [GitHub repo](https://github.com/prestonelam2003/CobaltEssentials) by clicking the code button, then "Download ZIP".
+
+### Upload to your service [step]
+Upload the downloaded ZIP using either SFTP or the file manager to the `/Resources/Server/` folder of your service.
+
+### Unzip the file [step]
+Once the file has been uploaded, unzip the file and delete the .ZIP file, leaving only the folder.
+
+### 🎉 Done [step]
+Restart your service and the mod should appear.
+
+## Configuring the resource
+
+### Setting yourself as owner
+To give yourself all the permissions Cobalt Essentials offers, you can set yourself as the pre-made owner role.
+
+:::warning[Be careful!]
+We do not recommend giving anyone other than users you trust this role as it gives them permissions to many dangerous commands (ban, kicking, changing others permissions, stopping the server)
+:::
+
+You can set a user as owner by entering the following command into the console: `ce setgroup yourName owner`, replacing `yourName` with your username.
+
+### Installing CEI
+A common addition to Cobalt Essentials is the interface extension. This allows users to access Cobalt Essentials via a user friendly interface. [Read our guide](/games/beammp/resources/ce-and-cei/installing-cei) to learn more.

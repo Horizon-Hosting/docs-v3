@@ -1,0 +1,12 @@
+{
+  "title": "Rust",
+  "pages": [
+    "getting-started",
+    "migrating",
+    "server-configuration",
+    "installing-modding-libraries",
+    "popular-mods",
+    "common-issues",
+    "..."
+  ]
+}

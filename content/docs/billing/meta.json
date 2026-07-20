@@ -1,0 +1,12 @@
+{
+  "title": "Billing",
+  "icon": "CreditCard",
+  "pages": [
+    "first-time-setup",
+    "managing-your-products",
+    "self-service-upgrades",
+    "cancelling-your-subscription",
+    "uncaptured-payments",
+    "..."
+  ]
+}

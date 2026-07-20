@@ -20,7 +20,7 @@ The Discord server rules must be followed at all times. Please note that we do h
 
 ### Community support channel
 
-The `#community-support` channel is for addon or game-related questions, where fellow clients or our support team can lend a hand. For example, asking how to install [DarkRP](/service-support/garrys-mod/gamemodes/darkrp) or [Cobalt Essentials](/service-support/beammp/resources/ce-and-cei/installing-ce).
+The `#community-support` channel is for addon or game-related questions, where fellow clients or our support team can lend a hand. For example, asking how to install [DarkRP](/games/garrys-mod/gamemodes/darkrp) or [Cobalt Essentials](/games/beammp/resources/ce-and-cei/installing-ce).
 
 ### Discord tickets
 

@@ -1,5 +1,0 @@
----
-title: Transmit (MacOS Only)
-description: How to use Transmit to transfer files to and from your service.
-type: How To
----

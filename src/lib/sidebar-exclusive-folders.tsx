@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
 /**
- * Closes the other Service Support game-category folders (BeamMP, Garry's Mod, etc.)
+ * Closes the other Games game-category folders (BeamMP, Garry's Mod, etc.)
  * whenever one of them is opened, without affecting folders nested deeper inside them
  * (e.g. BeamMP's "Resources"/"Common issues") or any other part of the sidebar.
  *
  * Fumadocs' sidebar folders are independent, uncontrolled collapsibles with no shared
- * "only one open" state, so this wires it up by finding the Service Support folder's
+ * "only one open" state, so this wires it up by finding the Games folder's
  * direct children in the rendered DOM and simulating a click on whichever sibling is
  * still open when a new one is clicked.
  */
@@ -20,7 +20,7 @@ export function SidebarExclusiveFolders() {
       if (suppress) return;
 
       const sidebar = document.getElementById('nd-sidebar');
-      const link = sidebar?.querySelector<HTMLAnchorElement>('a[href="/service-support"]');
+      const link = sidebar?.querySelector<HTMLAnchorElement>('a[href="/games"]');
       const content = link?.nextElementSibling;
       const list = content?.firstElementChild;
       if (!list) return;

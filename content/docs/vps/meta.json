@@ -1,0 +1,15 @@
+{
+  "title": "VPS",
+  "icon": "Server",
+  "pages": [
+    "first-setup",
+    "pick-a-distro",
+    "setup-ssh",
+    "installing-a-database-server",
+    "installing-docker",
+    "installing-a-web-server",
+    "running-a-minecraft-server",
+    "running-a-fivem-server",
+    "..."
+  ]
+}

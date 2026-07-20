@@ -1,0 +1,17 @@
+{
+  "title": "Games",
+  "icon": "Gamepad2",
+  "pages": [
+    "beammp",
+    "garrys-mod",
+    "minecraft",
+    "rust",
+    "terraria",
+    "truck-simulator",
+    "ark-survival-evolved",
+    "palworld",
+    "managing-databases",
+    "sftp",
+    "..."
+  ]
+}
