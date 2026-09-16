@@ -1,5 +1,4 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-router';
-import * as React from 'react';
 import appCss from '@/styles/app.css?url';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
 import { SidebarExclusiveFolders } from '@/lib/sidebar-exclusive-folders';
@@ -22,7 +21,17 @@ export const Route = createRootRoute({
         content: 'Guides and reference docs for Horizon Hosting game servers and VPS hosting.',
       },
     ],
-    links: [{ rel: 'stylesheet', href: appCss }],
+    links: [
+      {
+        rel: 'stylesheet',
+        href: appCss
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/logos/icon_colour.svg"
+      }
+    ],
   }),
   component: RootComponent,
 });
