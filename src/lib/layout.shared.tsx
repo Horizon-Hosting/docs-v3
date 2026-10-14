@@ -13,11 +13,13 @@ const ctaUrl =
   'https://hrznhosting.com/?utm_source=docs&utm_medium=referral&utm_campaign=docs_nav';
 
 // Mirrors hrzn-ui's <Button size="sm"> variants (see Button.svelte .btn / .btn-sm / .btn-ghost / .btn-primary).
+// Flat fill on purpose: #FF4F5E is a far brighter hue than the violet this replaced, so the
+// gradient + halo treatment that suited violet glares at this size.
 const btnBase =
   'inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-md px-3 py-1.5 min-h-[34px] text-[12.5px] font-semibold lg:flex-none';
 const btnTransition = 'duration-[240ms] ease-[cubic-bezier(0.22,1,0.36,1)]';
 const btnGhost = `${btnBase} transition-colors ${btnTransition} text-fd-muted-foreground hover:bg-fd-accent hover:text-fd-accent-foreground`;
-const btnPrimary = `${btnBase} text-white transition-[filter] ${btnTransition} hover:brightness-[1.14] [background:radial-gradient(ellipse_110%_140%_at_50%_-40%,#B49BFF_0%,#7B5CFF_48%,#5730E8_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),inset_0_0_0_1.5px_rgba(255,255,255,0.10),inset_0_-1px_0_rgba(0,0,0,0.18)]`;
+const btnPrimary = `${btnBase} bg-[#FF4F5E] text-white transition-[filter] ${btnTransition} hover:brightness-[1.08]`;
 
 export function baseOptions(): BaseLayoutProps {
   return {

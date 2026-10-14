@@ -1,9 +1,8 @@
 /* ── Fonts ──────────────────────────────────────────────────────────────────
-   Space Grotesk (display/headings) + Hanken Grotesk (body/UI) via Google.
-   0xProto (code/mono) is self-hosted — copy the /fonts files into your app's
-   public dir and fix the url() paths below. If you use next/font instead,
-   delete these and map --font-sans / --font-mono / --font-display to your
-   next/font CSS variables. */
+   Poppins (display/headings) + Inter (body/UI) via Google — the same
+   --font-title / --font-body pairing the marketing site uses, so the docs and
+   hrznhosting.com read as one property. 0xProto (code/mono) is self-hosted
+   from /public/fonts. */
 @font-face {
   font-family: '0xProto';
   src: url('/fonts/0xProto-Regular.woff2') format('woff2');
@@ -21,64 +20,82 @@
 }
 
 /* ── Theme tokens ─────────────────────────────────────────────────────────
-   @theme holds the LIGHT (default) palette + font tokens. Dark overrides
-   live in .dark below — Fumadocs toggles the .dark class via next-themes. */
+   "Horizon Ember" — Horizon Red (#FF4F5E) on the panel theme's Slate ramp.
+   @theme holds the LIGHT (default) palette + font tokens. Dark overrides live
+   in .dark below — Fumadocs toggles the .dark class via next-themes. */
 @theme {
   /* Type */
-  --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: '0xProto', ui-monospace, 'SF Mono', Menlo, monospace;
-  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 
-  /* ---- LIGHT mode ---- */
-  --color-fd-background: #FBFAFF;
+  /* ---- LIGHT mode ----
+     #FF4F5E stays the fill (buttons, rails, active bars) but only hits ~2.6:1
+     on white, so link and inline-code *text* uses the darker --horizon-ink
+     below instead. */
+  --color-fd-background: #FBFAFC;
   /* page */
-  --color-fd-foreground: #16112E;
+  --color-fd-foreground: #16171F;
   /* primary text */
-  --color-fd-muted: #F2EFFA;
+  --color-fd-muted: #F4F4F7;
   /* subtle fills */
-  --color-fd-muted-foreground: #756C97;
+  --color-fd-muted-foreground: #5C6273;
   /* secondary text */
   --color-fd-popover: #FFFFFF;
   /* menus, search */
-  --color-fd-popover-foreground: #16112E;
+  --color-fd-popover-foreground: #16171F;
   --color-fd-card: #FFFFFF;
   /* cards, code head */
-  --color-fd-card-foreground: #16112E;
-  --color-fd-border: rgba(50, 43, 82, 0.12);
-  --color-fd-primary: #6438F2;
-  /* violet — actions, active nav */
+  --color-fd-card-foreground: #16171F;
+  --color-fd-border: rgba(33, 35, 49, 0.11);
+  --color-fd-primary: #FF4F5E;
+  /* Horizon Red — actions, active nav */
   --color-fd-primary-foreground: #FFFFFF;
-  --color-fd-secondary: #ECE9F6;
+  --color-fd-secondary: #F0EFF2;
   /* secondary buttons */
-  --color-fd-secondary-foreground: #211B3D;
-  --color-fd-accent: #EDE7FF;
-  /* hovered menu/nav item bg */
-  --color-fd-accent-foreground: #2C1670;
-  --color-fd-ring: #7B5CFF;
+  --color-fd-secondary-foreground: #211B23;
+  --color-fd-accent: #EFEFF2;
+  /* Hovered nav/sidebar rows. Fumadocs renders these as bg-fd-accent/50 with
+     text-fd-accent-foreground/80, so a red-tinted pair stains every row in the
+     tree on the way past. Keep the hover neutral and let the red mark only the
+     ACTIVE row (bg-fd-primary/10 + the rail). */
+  --color-fd-accent-foreground: #16171F;
+  --color-fd-ring: #FF4F5E;
   /* focus ring */
+
+  /* Link + inline-code ink, contrast-safe on the light ground. */
+  --horizon-ink: #CC1526;
 }
 
 /* ---- DARK mode (brand-native) ---- */
 .dark {
-  --color-fd-background: #0B0820;
-  /* deep-space canvas */
-  --color-fd-foreground: #F4F1FF;
-  --color-fd-muted: #181231;
-  --color-fd-muted-foreground: #8A82AE;
-  --color-fd-popover: #110D26;
-  --color-fd-popover-foreground: #F4F1FF;
-  --color-fd-card: #110D26;
-  --color-fd-card-foreground: #F4F1FF;
-  --color-fd-border: rgba(189, 182, 216, 0.16);
-  --color-fd-primary: #7B5CFF;
-  /* cosmic violet */
+  --color-fd-background: #0C0E14;
+  /* Horizon Dusk canvas — overridden to transparent by the aurora below */
+  --color-fd-foreground: #F2F3F5;
+  --color-fd-muted: #0F1217;
+  --color-fd-muted-foreground: #99A0AE;
+  --color-fd-popover: #15181F;
+  /* Menus, the search dialog and the mobile drawer — these float over content
+     and stay fully opaque. */
+  --color-fd-popover-foreground: #F2F3F5;
+  --color-fd-card: rgba(15, 18, 23, 0.62);
+  /* Cards, callouts, code blocks, accordions. Translucent on purpose: a solid
+     slate fill reads grey against the aurora, which is red at the top and blue
+     at the bottom. Letting the ground through keeps every card the hue of the
+     patch of page it sits on, and --color-fd-border does the separating. */
+  --color-fd-card-foreground: #F2F3F5;
+  --color-fd-border: #232733;
+  --color-fd-primary: #FF4F5E;
+  /* Horizon Red */
   --color-fd-primary-foreground: #FFFFFF;
-  --color-fd-secondary: #1B1438;
-  --color-fd-secondary-foreground: #E6DBFF;
-  --color-fd-accent: #1E1742;
-  /* hovered item bg */
-  --color-fd-accent-foreground: #E6DBFF;
-  --color-fd-ring: #7B5CFF;
+  --color-fd-secondary: #1B1F28;
+  --color-fd-secondary-foreground: #D7DAE0;
+  --color-fd-accent: #1B1F28;
+  /* hovered item bg — neutral; see the light-mode note above */
+  --color-fd-accent-foreground: #F2F3F5;
+  --color-fd-ring: #FF4F5E;
+
+  --horizon-ink: #FF7482;
 }
 
 /* Forward the fd- colors to unprefixed Tailwind utilities (optional, handy
@@ -93,8 +110,8 @@
 }
 
 /* ── Typography polish ────────────────────────────────────────────────────
-   Give headings the geometric display face and tight tracking; let inline
-   code carry a faint violet tint. Scoped to Fumadocs' prose. */
+   Give headings the display face and tight tracking; let inline code carry a
+   faint red tint. Scoped to Fumadocs' prose. */
 .prose h1,
 .prose h2,
 .prose h3,
@@ -112,12 +129,24 @@
 /* inline code */
 .prose :not(pre)>code {
   font-family: var(--font-mono);
-  color: var(--color-fd-primary);
-  background: color-mix(in srgb, var(--color-fd-primary) 12%, transparent);
+  color: var(--horizon-ink);
+  background: color-mix(in srgb, var(--color-fd-primary) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-fd-primary) 22%, transparent);
   border-radius: 5px;
   padding: 0.1em 0.4em;
   font-weight: 400;
+}
+
+/* Prose links take the contrast-safe ink rather than the raw fill. */
+.prose a:not([class*="not-prose"]) {
+  color: var(--horizon-ink);
+}
+
+/* Active sidebar/TOC row. Fumadocs sets text-fd-primary, but the fill red is
+   harsh at 13px — use the lighter ink, same as links and inline code. */
+#nd-sidebar [data-active="true"],
+#nd-toc [data-active="true"] {
+  color: var(--horizon-ink);
 }
 
 /* mono eyebrows / sidebar section labels read better with a touch of tracking */
@@ -129,40 +158,47 @@
 /* Optional: widen the docs column a touch for code-heavy pages */
 /* :root { --fd-layout-width: 1480px; } */
 
+/* The notebook layout paints #nd-sidebar with bg-fd-card, which lands as an
+   opaque #15181F slab on top of the aurora and chops it off at a hard vertical
+   edge. Let the page ground run straight through the column instead — border-e
+   is already there to separate it. The collapsed (floating) sidebar is excluded:
+   that one is a panel over the content and does need its own surface. */
+#nd-sidebar:not([data-collapsed="true"]) {
+  background-color: transparent;
+}
+
 /* Mobile sidebar drawer: both the overlay and the drawer panel itself rely on
-   --color-fd-background, which the cosmic backdrop below sets to `transparent`
-   in dark mode, leaving the page behind it too visible. --color-fd-card is the
-   same dark surface color used by popovers/menus and isn't affected by that
-   override, so use it here instead for a properly opaque drawer. */
+   --color-fd-background, which the aurora backdrop below sets to `transparent`
+   in dark mode, leaving the page behind it too visible. --color-fd-popover is
+   the opaque dark surface used by menus and the search dialog — note this must
+   NOT be --color-fd-card, which is deliberately translucent. */
 .fixed.inset-0.backdrop-blur-xs[data-state] {
-  background-color: color-mix(in srgb, var(--color-fd-card) 85%, transparent);
+  background-color: color-mix(in srgb, var(--color-fd-popover) 85%, transparent);
 }
 
 .fixed.inset-e-0.inset-y-0.shadow-lg[data-state] {
-  background-color: var(--color-fd-card);
+  background-color: var(--color-fd-popover);
 }
 
 /* ============================================================================
    SIGNATURE TOUCHES  —  intensity
    ----------------------------------------------------------------------------
    The color tokens above give you a complete theme on their own ("Restrained").
-   This section layers on Horizon's cosmic personality and is set to
-   FULL COSMIC (direction C) by default: deep-space nebula backdrop, a
-   gradient page title, and a violet glow on primary + active states.
-   To dial it down, comment the FULL COSMIC block and/or uncomment one of the
-   alternatives at the bottom of this section.
+   This section layers on Horizon's personality and is set to
+   FULL EMBER by default: red aurora backdrop, a gradient page title, and a red
+   glow on primary + active states. To dial it down, comment the FULL EMBER
+   block and/or uncomment one of the alternatives at the bottom.
    ============================================================================ */
 
-/* ---- Glow on primary + active states (used by Moderate AND Cosmic) ------- */
-.dark {
-  /* a soft violet aura on the primary call-to-action buttons */
-  --horizon-glow: 0 0 0 1px rgba(123, 92, 255, 0.40), 0 6px 28px rgba(123, 92, 255, 0.30);
-}
+/* ---- No glow on the CTA ------------------------------------------------
+   Ember carries its intensity in the backdrop and the gradient title, not in a
+   haloed button: #FF4F5E is bright enough that a red aura reads as glare where
+   the violet one read as depth. The CTA is a flat fill (layout.shared.tsx).
 
-.dark .bg-fd-primary,
-.dark button[data-active="true"] {
-  box-shadow: var(--horizon-glow);
-}
+   Note for anyone tempted to add one back here: in the notebook layout
+   `.bg-fd-primary` and `[data-active="true"]` only ever match sidebar rows and
+   open folder buttons, so a rule in this file halos the whole tree in red
+   rather than the one button it was written for. */
 
 /* live/operational dot can pulse — used on status pills if you add them */
 @media (prefers-reduced-motion: no-preference) {
@@ -174,23 +210,24 @@
 
     0%,
     100% {
-      box-shadow: 0 0 0 0 rgba(123, 92, 255, 0.45);
+      box-shadow: 0 0 0 0 rgba(255, 79, 94, 0.45);
     }
 
     50% {
-      box-shadow: 0 0 0 6px rgba(123, 92, 255, 0);
+      box-shadow: 0 0 0 6px rgba(255, 79, 94, 0);
     }
   }
 }
 
-/* ---- FULL COSMIC (default): deep-space radial backdrop + gradient title ---
-   Washes the page in nebula glow. Text stays on opaque surfaces so nothing is
-   obscured (per the brand rule). Comment this block to drop to Moderate. */
+/* ---- FULL EMBER (default): red aurora backdrop + gradient title -----------
+   Red glow top-right, Horizon Blue as the cool second light bottom-left. Text
+   stays on opaque surfaces so nothing is obscured (per the brand rule).
+   Comment this block to drop to Moderate. */
 .dark body {
-  background-color: #070514;
+  background-color: #07080C;
   background-image:
-    radial-gradient(120% 120% at 80% -10%, rgba(123, 92, 255, 0.22) 0%, rgba(123, 92, 255, 0) 45%),
-    radial-gradient(90% 90% at 5% 110%, rgba(255, 107, 61, 0.14) 0%, rgba(255, 107, 61, 0) 50%);
+    radial-gradient(120% 110% at 82% -14%, rgba(255, 79, 94, 0.20) 0%, rgba(255, 79, 94, 0) 46%),
+    radial-gradient(95% 90% at 2% 108%, rgba(13, 167, 226, 0.14) 0%, rgba(13, 167, 226, 0) 52%);
   background-attachment: fixed;
 }
 
@@ -199,21 +236,27 @@
 }
 
 .dark #nd-page h1 {
-  background: linear-gradient(135deg, #B194FF 0%, #F472D0 55%, #FFB020 100%);
+  background: linear-gradient(104deg, #FF9BA5 0%, #FF4F5E 46%, #FF9D4B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* A quieter version of the same gradient on light, where a pastel ramp washes
+   out against #FBFAFC. */
+#nd-page h1 {
+  background: linear-gradient(104deg, #D11F30 0%, #FF4F5E 55%, #E07A16 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* ---- DIAL DOWN TO MODERATE (optional): keep the glow, drop the backdrop ---
-   Comment the FULL COSMIC block above, then this needs nothing else — the glow
+   Comment the FULL EMBER block above, then this needs nothing else — the glow
    rules at the top of this section are the Moderate level on their own. */
 
-/* ---- DIAL DOWN TO RESTRAINED (optional): strip all glow ------------------ */
-/*
-.dark .bg-fd-primary,
-.dark button[data-active="true"] { box-shadow: none; }
-*/
+/* ---- DIAL DOWN TO RESTRAINED (optional) ---------------------------------
+   Comment the FULL EMBER block above; there is no glow left to strip. */
 
 /* ============================================================================
    CODE / SHIKI palette (reference)
@@ -222,12 +265,12 @@
    "css-variables" Shiki theme (or override in your MDX rehype config) and feed
    it these Horizon token colors:
 
-     keyword / tag .......... #F472D0  (nebula magenta)
-     string ................. #34E6A8  (cosmic mint)
-     function / method ...... #5FE3E3  (cosmic cyan)
-     number / boolean ....... #FFC94D  (solar amber)
-     comment ................ #5E567E  (faint)
-     punctuation ............ #8A82AE
-     variable / property .... #BBB2DE
-     shell prompt / command . #B194FF  (violet)
+     keyword / tag .......... #FF7482  (horizon red, light)
+     string ................. #34E6A8  (mint)
+     function / method ...... #4FC3F7  (horizon blue, lighter)
+     number / boolean ....... #FFB020  (solar amber)
+     comment ................ #5F6675  (dusk [3])
+     punctuation ............ #99A0AE
+     variable / property .... #D7DAE0
+     shell prompt / command . #FF9BA5  (horizon red, lightest)
    ============================================================================ */

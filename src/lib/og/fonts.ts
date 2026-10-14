@@ -2,7 +2,7 @@
  * lib/og/fonts.ts
  * ---------------------------------------------------------------------------
  * Lazily fetch the Horizon brand fonts as raw font data for Takumi.
- *  - Space Grotesk + Hanken Grotesk: pulled from Google Fonts (woff2; Takumi
+ *  - Poppins + Inter: pulled from Google Fonts (woff2; Takumi
  *    decodes WOFF2 natively).
  *  - 0xProto: self-hosted — read from /public/fonts (copy the files there).
  * Results are cached at module scope so each weight is fetched at most once

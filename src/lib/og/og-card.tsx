@@ -5,12 +5,12 @@ const LOGO_SVG = readFileSync(join(process.cwd(), 'public/logos/logo_dark.svg'),
 const LOGO_URI = `data:image/svg+xml,${encodeURIComponent(LOGO_SVG)}`;
 
 const STARS: [number, number, number, number, string][] = [
-	[7, 18, 2, 0.7, '#FFFFFF'], [14, 62, 1.5, 0.5, '#FFD980'], [21, 33, 2, 0.6, '#FFFFFF'], [27, 78, 1.5, 0.4, '#B194FF'],
-	[33, 12, 2.5, 0.8, '#FFFFFF'], [38, 49, 1.5, 0.45, '#FFFFFF'], [44, 84, 2, 0.6, '#FFD980'], [51, 24, 1.5, 0.5, '#FFFFFF'],
-	[58, 70, 2, 0.55, '#B194FF'], [63, 40, 1.5, 0.4, '#FFFFFF'], [69, 15, 2, 0.65, '#FFFFFF'], [74, 88, 1.5, 0.5, '#FFD980'],
-	[80, 55, 2.5, 0.7, '#FFFFFF'], [86, 30, 1.5, 0.45, '#B194FF'], [91, 72, 2, 0.6, '#FFFFFF'], [95, 46, 1.5, 0.4, '#FFFFFF'],
-	[4, 46, 1.5, 0.4, '#FFFFFF'], [18, 90, 2, 0.55, '#FFFFFF'], [47, 8, 1.5, 0.5, '#FFD980'], [66, 60, 1.5, 0.4, '#FFFFFF'],
-	[11, 76, 1.5, 0.45, '#B194FF'], [55, 92, 2, 0.5, '#FFFFFF'], [88, 12, 1.5, 0.5, '#FFFFFF'], [30, 58, 1.5, 0.4, '#FFFFFF'],
+	[7, 18, 2, 0.7, '#FFFFFF'], [14, 62, 1.5, 0.5, '#FFC94D'], [21, 33, 2, 0.6, '#FFFFFF'], [27, 78, 1.5, 0.4, '#FF9BA5'],
+	[33, 12, 2.5, 0.8, '#FFFFFF'], [38, 49, 1.5, 0.45, '#FFFFFF'], [44, 84, 2, 0.6, '#FFC94D'], [51, 24, 1.5, 0.5, '#FFFFFF'],
+	[58, 70, 2, 0.55, '#FF9BA5'], [63, 40, 1.5, 0.4, '#FFFFFF'], [69, 15, 2, 0.65, '#FFFFFF'], [74, 88, 1.5, 0.5, '#FFC94D'],
+	[80, 55, 2.5, 0.7, '#FFFFFF'], [86, 30, 1.5, 0.45, '#FF9BA5'], [91, 72, 2, 0.6, '#FFFFFF'], [95, 46, 1.5, 0.4, '#FFFFFF'],
+	[4, 46, 1.5, 0.4, '#FFFFFF'], [18, 90, 2, 0.55, '#FFFFFF'], [47, 8, 1.5, 0.5, '#FFC94D'], [66, 60, 1.5, 0.4, '#FFFFFF'],
+	[11, 76, 1.5, 0.45, '#FF9BA5'], [55, 92, 2, 0.5, '#FFFFFF'], [88, 12, 1.5, 0.5, '#FFFFFF'], [30, 58, 1.5, 0.4, '#FFFFFF'],
 ];
 
 export interface OgCardProps {
@@ -31,15 +31,15 @@ export function OgCard({
 			width: '1200px',
 			height: '630px',
 			display: 'flex',
-			backgroundColor: '#070514',
-			fontFamily: 'Hanken Grotesk',
+			backgroundColor: '#07080C',
+			fontFamily: 'Inter',
 			overflow: 'hidden',
 		}}>
 			<div style={{
 				position: 'absolute', top: 0, left: 0, width: '1200px', height: '630px', display: 'flex',
 				backgroundImage:
-					'radial-gradient(58% 70% at 84% -6%, rgba(123,92,255,0.30), rgba(123,92,255,0) 55%),'
-					+ 'radial-gradient(50% 60% at 6% 108%, rgba(255,107,61,0.18), rgba(255,107,61,0) 55%)'
+					'radial-gradient(58% 70% at 84% -6%, rgba(255,79,94,0.38), rgba(255,79,94,0) 58%),'
+					+ 'radial-gradient(50% 60% at 6% 108%, rgba(13,167,226,0.18), rgba(13,167,226,0) 55%)'
 			}} />
 
 			{STARS.map(([x, y, s, o, c], i) => (
@@ -70,21 +70,21 @@ export function OgCard({
 					<div style={{ display: 'flex' }}>
 						<div style={{
 							display: 'flex', fontFamily: '"0xProto"', fontSize: '17px', fontWeight: 700,
-							letterSpacing: '0.2em', textTransform: 'uppercase', color: '#B194FF',
-							backgroundColor: 'rgba(123,92,255,0.16)', border: '1px solid rgba(123,92,255,0.32)',
+							letterSpacing: '0.2em', textTransform: 'uppercase', color: '#FF9BA5',
+							backgroundColor: 'rgba(255,79,94,0.16)', border: '1px solid rgba(255,79,94,0.32)',
 							borderRadius: '999px', padding: '7px 16px'
 						}}>{eyebrow}</div>
 					</div>
 					<div style={{
-						display: 'flex', marginTop: '14px', fontFamily: 'Space Grotesk', fontSize: '70px',
+						display: 'flex', marginTop: '14px', fontFamily: 'Poppins', fontSize: '70px',
 						fontWeight: 700, lineHeight: 1.04, letterSpacing: '-0.025em',
-						backgroundImage: 'linear-gradient(102deg, #CDBAFF 0%, #F4A8E0 52%, #FFC94D 100%)',
+						backgroundImage: 'linear-gradient(104deg, #FF9BA5 0%, #FF6170 50%, #FFB020 100%)',
 						backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent'
 					}}>{title}</div>
 					{description ? (
 						<div style={{
 							display: 'flex', marginTop: '22px', maxWidth: '700px', fontSize: '27px',
-							lineHeight: 1.42, color: '#BBB2DE'
+							lineHeight: 1.42, color: '#D7DAE0'
 						}}>{description}</div>
 					) : null}
 				</div>
@@ -93,9 +93,9 @@ export function OgCard({
 					<div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
 						<div style={{
 							display: 'flex', width: '52px', height: '5px', borderRadius: '999px',
-							backgroundImage: 'linear-gradient(90deg, #7B5CFF 0%, #E84CC4 55%, #FFB020 100%)'
+							backgroundImage: 'linear-gradient(90deg, #FF4F5E 0%, #FF9D4B 55%, #0DA7E2 100%)'
 						}} />
-						<span style={{ fontFamily: '"0xProto"', fontSize: '21px', color: '#8A82AE' }}>{url}</span>
+						<span style={{ fontFamily: '"0xProto"', fontSize: '21px', color: '#99A0AE' }}>{url}</span>
 					</div>
 				</div>
 			</div>

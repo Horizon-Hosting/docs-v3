@@ -10,9 +10,17 @@ var docs = defineDocs({
     }
   }
 });
+function remarkStepsExceptLegal() {
+  const transformer = remarkSteps();
+  return (tree, file) => {
+    const path = file?.path ?? "";
+    if (/[\\/]legal[\\/]/.test(path)) return;
+    return transformer(tree, file);
+  };
+}
 var source_config_default = defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkSteps, remarkDirectiveAdmonition, remarkDirective]
+    remarkPlugins: [remarkStepsExceptLegal, remarkDirectiveAdmonition, remarkDirective]
   }
 });
 export {
