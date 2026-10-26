@@ -1,6 +1,6 @@
 ---
 title: Installing Transmit
-description: How to install Transmit
+description: How to download and install the Transmit SFTP client on macOS.
 type: How To
 ---
 

@@ -7,10 +7,10 @@ type: How To
 
 ## Choose your server software \[step]
 
-Your service comes with a range of server software to choose from, including Vanilla, Paper, Spigot, Forge, Fabric, and proxy software like Velocity/BungeeCord. You can switch between these from the "Software" section of the game panel.
+Your service comes with a range of server software to choose from, including Vanilla, Paper, Spigot, Forge, Fabric, and proxy software like Velocity/BungeeCord. If your panel has a "Version Installer" page (Game Panel V2 Only, currently in beta), you can pick your software and specific version/build there in one place. For Forge and NeoForge, you'll also pick a matching **Startup Command** there instead of one being fixed for you, [see our server configuration guide](/games/minecraft/server-configuration#startup-command-game-panel-v2-only) for the available presets. Otherwise, switch between software from the "Software" section of the game panel, and set a specific version separately.
 
 :::tip[Not sure which to pick?]
-If you just want plugins, choose Paper, [view our plugin guides](/games/minecraft/plugins/essentials). If you want mods, choose Forge or Fabric depending on which mod loader your mods target, [view our mod guides](/games/minecraft/mods/simple-voice-chat).
+If you just want plugins, choose Paper, [view our plugin guides](/games/minecraft/plugins/essentials). If you want mods, choose Forge or Fabric depending on which mod loader your mods target, [view our mod guides](/games/minecraft/mods/simple-voice-chat). Want a ready-made modpack instead? [See our modpack installer guide](/games/minecraft/installing-a-modpack).
 :::
 
 :::warning[Switching software later?]
@@ -19,11 +19,11 @@ If you switch to different server software after your service already has files 
 
 ## Set your Minecraft version \[step]
 
-In the same "Startup" section, set the **Minecraft Version** field to the version you'd like to run, then reinstall your server from the settings page. See [our guide on changing versions](/games/minecraft/changing-minecraft-version) for more detail, including switching server software after the fact.
+If you used the Version Installer above, this is already done. Otherwise, in the "Startup" section, set the **Minecraft Version** field to the version you'd like to run, then reinstall your server from the settings page. See [our guide on changing versions](/games/minecraft/changing-minecraft-version) for more detail, including switching server software after the fact.
 
-## Set your RAM \[step]
+## Check your RAM \[step]
 
-Not sure how much RAM to allocate? [View our guide](/games/minecraft/how-much-ram-do-i-need) covering the recommended amounts for Vanilla, Spigot/Paper, BungeeCord/Velocity, and Forge/Fabric servers.
+RAM isn't a setting you change on the server, your service automatically uses the amount included with your plan (the Startup Command handles this for you). Not sure how much you need? [View our guide](/games/minecraft/how-much-ram-do-i-need) covering the recommended amounts for Vanilla, Spigot/Paper, BungeeCord/Velocity, and Forge/Fabric servers, and [upgrade your plan](/billing/self-service-upgrades) if you need more.
 
 ## Accept the EULA \[step]
 

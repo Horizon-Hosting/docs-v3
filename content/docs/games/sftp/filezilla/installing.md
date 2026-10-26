@@ -1,6 +1,6 @@
 ---
 title: Installing FileZilla
-description: How to install FileZilla
+description: How to download and install the FileZilla SFTP client on Windows, macOS, or Linux.
 type: How To
 ---
 

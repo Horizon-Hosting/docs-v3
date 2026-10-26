@@ -1,5 +1,5 @@
 ---
-title: "\"RCON connection refused\" on startup"
+title: '"RCON connection refused" on startup'
 description: Why your console shows RCON errors right after starting your server.
 type: Common Issue
 ---

@@ -1,6 +1,6 @@
 ---
 title: Installing WinSCP
-description: How to install WinSCP
+description: How to download and install the WinSCP SFTP client on Windows.
 type: How To
 ---
 

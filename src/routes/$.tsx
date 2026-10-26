@@ -17,8 +17,17 @@ import { getPageImage } from '@/lib/source.shared';
 
 const siteUrl = 'https://docs.hrznhosting.com';
 
+const slugNames: Record<string, string> = {
+  'ark-survival-evolved': 'ARK: Survival Evolved',
+  beammp: 'BeamMP',
+  'garrys-mod': "Garry's Mod",
+  sftp: 'SFTP',
+  tmodloader: 'tModLoader',
+  vps: 'VPS',
+};
+
 function slugToName(slug: string) {
-  return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  return slugNames[slug] ?? slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export const Route = createFileRoute('/$')({
@@ -33,7 +42,13 @@ export const Route = createFileRoute('/$')({
     if (!loaderData) return {};
     const { slugs, title, description } = loaderData;
     const canonicalUrl = slugs.length === 0 ? siteUrl : `${siteUrl}/${slugs.join('/')}`;
-    const imageUrl = getPageImage(slugs).url;
+    const imageUrl = `${siteUrl}${getPageImage(slugs).url}`;
+
+    const section = slugs[0] === 'games' ? slugs[1] : slugs[0];
+    const pageTitle =
+      slugs.length > 1 && section !== slugs[slugs.length - 1]
+        ? `${title} | ${slugToName(section)}`
+        : title;
 
     const breadcrumbList = {
       '@context': 'https://schema.org',
@@ -51,13 +66,16 @@ export const Route = createFileRoute('/$')({
 
     return {
       meta: [
-        { title: `${title} | Horizon Hosting Docs` },
+        { title: `${pageTitle} | Horizon Hosting Docs` },
         ...(description ? [{ name: 'description', content: description }] : []),
-        { property: 'og:title', content: title },
+        { property: 'og:title', content: pageTitle },
         ...(description ? [{ property: 'og:description', content: description }] : []),
         { property: 'og:image', content: imageUrl },
+        { property: 'og:url', content: canonicalUrl },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:site_name', content: 'Horizon Hosting Docs' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: title },
+        { name: 'twitter:title', content: pageTitle },
         ...(description ? [{ name: 'twitter:description', content: description }] : []),
         { name: 'twitter:image', content: imageUrl },
         { 'script:ld+json': breadcrumbList },
