@@ -5,20 +5,27 @@ icon: Rocket
 type: How To
 ---
 
-:::tip[Temporary Change]
-Due to BeamMP's disruption with their account services, you will need to run your service with allow guests enabled.
+:::tip[Keymaster Migration]
+The new BeamMP keymaster is here, if you haven't had a server before you can ignore these steps!
 
-For more details, you can read [our guide on how to enable guests](/games/beammp/common-issues/allow-guests).
+If you had an old BeamMP forums account, on the new keymaster login page follow the `Account Recovery Notice` process.
+You'll need the email for your old acount, and you'll be sent a link via email to setup your new credentials.
+
+On the Keymaster tab on the new dashboard, you'll be able to migrate your old Keymaster servers to the new system.
+You'll need to sign in with Discord and your old servers will reappear, the authentication key will still change.
+
+*If you create as many new keys as you can, then migrate your old keys, you'll get additional keys at no charge*
 :::
 
 ## Getting a server key \[step]
 
 **If you want your server to show on the serverlist, you will need a server key.**
 
-* To begin, navigate to [the BeamMP keymaster](https://keymaster.beammp.com/) and sign in.
-* Then, navigate to the AuthKeys section and create a key using the green plus button.
-* After a key has been made, copy the hidden value from the Key column.
-* Please enter this key into the "Authentication Key" field on the startup section of the game panel.
+* To begin, navigate to [the BeamMP keymaster](https://accounts.beammp.com/) and sign in.
+* Then, navigate to the Keymaster tab and create a key using the `Create New Server Key` button.
+* After a key has been made, press the `Show Keys` button in the bottom left `Your Server Keys` box.
+* Press the Copy button for the key you just made.
+* Enter this key into the "Authentication Key" field on the startup section of the game panel.
 
 **Please do not share this key, it is unique to you.**
 
