@@ -254,3 +254,6 @@ sketch
 # Unpublished / work-in-progress content, kept out of content/docs so it never builds or
 # gets committed by accident. See drafts/README.md.
 drafts/
+
+# Pseudobuilt code dir
+.source
