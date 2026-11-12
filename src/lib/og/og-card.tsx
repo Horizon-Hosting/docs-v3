@@ -16,13 +16,11 @@ const STARS: [number, number, number, number, string][] = [
 export interface OgCardProps {
 	title: string;
 	description?: string;
-	eyebrow?: string;
 	url?: string;
 }
 export function OgCard({
 	title,
 	description,
-	eyebrow = 'Documentation',
 	url = 'hrzn.link/docs',
 }: OgCardProps) {
 	return (
@@ -67,16 +65,8 @@ export function OgCard({
 				</div>
 
 				<div style={{ display: 'flex', flexDirection: 'column', maxWidth: '820px' }}>
-					<div style={{ display: 'flex' }}>
-						<div style={{
-							display: 'flex', fontFamily: '"0xProto"', fontSize: '17px', fontWeight: 700,
-							letterSpacing: '0.2em', textTransform: 'uppercase', color: '#FF9BA5',
-							backgroundColor: 'rgba(255,79,94,0.16)', border: '1px solid rgba(255,79,94,0.32)',
-							borderRadius: '999px', padding: '7px 16px'
-						}}>{eyebrow}</div>
-					</div>
 					<div style={{
-						display: 'flex', marginTop: '14px', fontFamily: 'Poppins', fontSize: '70px',
+						display: 'flex', fontFamily: 'Poppins', fontSize: '70px',
 						fontWeight: 700, lineHeight: 1.04, letterSpacing: '-0.025em',
 						backgroundImage: 'linear-gradient(104deg, #FF9BA5 0%, #FF6170 50%, #FFB020 100%)',
 						backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent'

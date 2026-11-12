@@ -1,11 +1,11 @@
-import { createServerFn } from '@tanstack/react-start';
-import { source } from '@/lib/source';
+import type { ReactNode } from 'react';
 import type { Folder, Item, Node } from 'fumadocs-core/page-tree';
 
+// ponytail: plain functions over the client-side page tree; server fns don't exist on static hosting
 export interface CleanFolderData {
-	title: string;
+	title: ReactNode;
 	url: string;
-	description: string;
+	description: ReactNode;
 }
 
 function findFolderByPath(nodes: Node[], targetPath: string): Folder | null {
@@ -28,66 +28,57 @@ function findFolderByPath(nodes: Node[], targetPath: string): Folder | null {
 	return null;
 }
 
-function getDescription(node: Item | Folder['index'] | undefined): string | null {
-	if (!node?.description) return null;
-	return typeof node.description === 'string' ? node.description : String(node.description);
+export function getSubFolderLinks(nodes: Node[], path: string, targetSlug: string): CleanFolderData[] {
+	const targetFolder = findFolderByPath(nodes, path);
+	if (!targetFolder || !targetFolder.children) return [];
+
+	return targetFolder.children
+		.filter((node: Node): node is Folder => node.type === 'folder')
+		.flatMap((folderNode: Folder) => {
+			// Prefer a child folder whose index URL ends with /targetSlug
+			const matchingFolder = folderNode.children?.find(
+				(child): child is Folder =>
+					child.type === 'folder' &&
+					(child.index?.url?.endsWith(`/${targetSlug}`) ?? false)
+			);
+			if (matchingFolder?.index?.url) {
+				return [{
+					title: folderNode.name,
+					url: matchingFolder.index.url,
+					description:
+						matchingFolder.index.description ??
+						folderNode.index?.description ??
+						'View guide',
+				}];
+			}
+
+			// Fall back to a child page whose URL ends with /targetSlug
+			const matchingPage = folderNode.children?.find(
+				(child): child is Item =>
+					child.type === 'page' && child.url.endsWith(`/${targetSlug}`)
+			);
+			if (matchingPage) {
+				return [{
+					title: folderNode.name,
+					url: matchingPage.url,
+					description: matchingPage.description ?? 'View guide',
+				}];
+			}
+
+			return [];
+		});
 }
 
-export const getSubFolderLinks = createServerFn({ method: 'GET' })
-	.inputValidator((data: { path: string; targetSlug: string }) => data)
-	.handler(async ({ data: { path, targetSlug } }): Promise<CleanFolderData[]> => {
-		const targetFolder = findFolderByPath(source.pageTree.children, path);
-		if (!targetFolder || !targetFolder.children) return [];
+export function getSubFolderData(nodes: Node[], path: string): CleanFolderData[] {
+	const targetFolder = findFolderByPath(nodes, path);
 
-		return targetFolder.children
-			.filter((node: Node): node is Folder => node.type === 'folder')
-			.flatMap((folderNode: Folder) => {
-				// Prefer a child folder whose index URL ends with /targetSlug
-				const matchingFolder = folderNode.children?.find(
-					(child): child is Folder =>
-						child.type === 'folder' &&
-						(child.index?.url?.endsWith(`/${targetSlug}`) ?? false)
-				);
-				if (matchingFolder?.index?.url) {
-					return [{
-						title: String(folderNode.name),
-						url: matchingFolder.index.url,
-						description:
-							getDescription(matchingFolder.index) ??
-							getDescription(folderNode.index) ??
-							'View guide',
-					}];
-				}
+	if (!targetFolder || !targetFolder.children) return [];
 
-				// Fall back to a child page whose URL ends with /targetSlug
-				const matchingPage = folderNode.children?.find(
-					(child): child is Item =>
-						child.type === 'page' && child.url.endsWith(`/${targetSlug}`)
-				);
-				if (matchingPage) {
-					return [{
-						title: String(folderNode.name),
-						url: matchingPage.url,
-						description: getDescription(matchingPage) ?? 'View guide',
-					}];
-				}
-
-				return [];
-			});
-	});
-
-export const getSubFolderData = createServerFn({ method: 'GET' })
-	.inputValidator((path: string) => path)
-	.handler(async ({ data: path }): Promise<CleanFolderData[]> => {
-		const targetFolder = findFolderByPath(source.pageTree.children, path);
-
-		if (!targetFolder || !targetFolder.children) return [];
-
-		return targetFolder.children
-			.filter((node: Node): node is Folder => node.type === 'folder')
-			.map((folderNode: Folder) => ({
-				title: String(folderNode.name),
-				url: folderNode.index?.url ?? '#',
-				description: getDescription(folderNode.index) ?? 'View guide',
-			}));
-	});
+	return targetFolder.children
+		.filter((node: Node): node is Folder => node.type === 'folder')
+		.map((folderNode: Folder) => ({
+			title: folderNode.name,
+			url: folderNode.index?.url ?? '#',
+			description: folderNode.index?.description ?? 'View guide',
+		}));
+}

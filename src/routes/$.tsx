@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { DocsLayout } from 'fumadocs-ui/layouts/notebook';
 import { createServerFn } from '@tanstack/react-start';
+import { staticFunctionMiddleware } from '@tanstack/start-static-server-functions';
 import { source } from '@/lib/source';
 import browserCollections from 'collections/browser';
 import {
@@ -33,7 +34,7 @@ export const Route = createFileRoute('/$')({
     if (!loaderData) return {};
     const { slugs, title, description } = loaderData;
     const canonicalUrl = slugs.length === 0 ? siteUrl : `${siteUrl}/${slugs.join('/')}`;
-    const imageUrl = getPageImage(slugs).url;
+    const imageUrl = `${siteUrl}${getPageImage(slugs).url}`;
 
     const breadcrumbList = {
       '@context': 'https://schema.org',
@@ -70,6 +71,7 @@ export const Route = createFileRoute('/$')({
 const serverLoader = createServerFn({
   method: 'GET',
 })
+  .middleware([staticFunctionMiddleware])
   .inputValidator((slugs: string[]) => slugs)
   .handler(async ({ data: slugs }) => {
     const page = source.getPage(slugs);

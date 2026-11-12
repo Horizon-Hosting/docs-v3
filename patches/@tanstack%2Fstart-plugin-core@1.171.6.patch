@@ -1,0 +1,18 @@
+diff --git a/dist/esm/prerender.js b/dist/esm/prerender.js
+index 1ddb24d66d355474e306fada6be7d02e00c8bcf7..34e5200ef5e1200b454801b6ebc8a79579a1b52d 100644
+--- a/dist/esm/prerender.js
++++ b/dist/esm/prerender.js
+@@ -90,10 +90,11 @@ async function prerender({ startConfig, handler }) {
+ 					else if (cleanPagePath.endsWith("/") || (prerenderOptions.autoSubfolderIndex ?? true)) htmlPath = joinURL(cleanPagePath, "index.html");
+ 					else htmlPath = cleanPagePath + ".html";
+ 					const filename = withoutBase(isImplicitHTML ? htmlPath : routeWithIndex, routerBasePath);
+-					const html = await res.text();
++					const isText = /html|text|json|xml|javascript/.test(contentType);
++					const html = isText ? await res.text() : "";
+ 					const filepath = path.join(outputDir, filename);
+ 					await promises.mkdir(path.dirname(filepath), { recursive: true });
+-					await promises.writeFile(filepath, html);
++					await promises.writeFile(filepath, isText ? html : Buffer.from(await res.arrayBuffer()));
+ 					prerendered.add(page.path);
+ 					const newPage = await prerenderOptions.onSuccess?.({
+ 						page,

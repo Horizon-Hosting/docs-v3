@@ -49,13 +49,11 @@ export default defineConfig({
       prerender: {
         enabled: true,
       },
+      // OG images are only referenced from <meta>, so the crawler never finds them
+      pages: getPrerenderRoutes().map((path) => ({ path })),
     }),
     react(),
-    nitro({
-      prerender: {
-        routes: getPrerenderRoutes(),
-      },
-    }),
+    nitro(),
   ],
   resolve: {
     tsconfigPaths: true,

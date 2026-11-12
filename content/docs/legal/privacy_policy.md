@@ -1,16 +1,16 @@
 ---
 title: "Privacy Policy"
-last_reviewed: 2026-07-02
+last_reviewed: 2026-07-06
 status: Accepted
-version: v1.0
-last_updated: 2026-07-02
+version: v1.1
+last_updated: 2026-11-12
 ---
 
 **Horizon Hosting Limited (trading as "Horizon Hosting")**
 Company Number: 13693820
 Registered in England and Wales
 
-Last Updated: 2 July 2026
+Last Updated: 12 November 2026
 
 
 ---
@@ -147,7 +147,13 @@ The Service may contain links or connections to third-party websites and service
 
 We, and some of the third-party processors listed in Clause 8 (including PostHog), use cookies and similar tracking technologies on the Websites. Further information, including how to manage your cookie preferences, is set out in our Cookie Policy.
 
-## 11. Children's Privacy
+## 11. Do Not Track
+
+Some web browsers transmit "Do Not Track" ("DNT") signals to websites. There is currently no consistent industry standard for interpreting or responding to DNT signals, and no requirement under UK law — including the UK GDPR or the Privacy and Electronic Communications Regulations 2003 — that we honour them. Accordingly, we do not alter our data collection or processing practices in response to DNT signals received from your browser.
+
+If you wish to limit or opt out of analytics cookies or other non-essential tracking, please manage your preferences through our cookie consent system, which you can access by clicking **Cookie settings** in the footer of any page on our Websites. Further information on how cookies and similar technologies work, and how to manage your consent, is set out in our Cookie Policy.
+
+## 12. Children's Privacy
 
 This Clause addresses our processing of personal data under applicable data protection law, and is separate from the eligibility requirements for using the Services set out in Clause 2 of the Terms (Eligibility and User Representations).
 
@@ -155,7 +161,7 @@ We will process a child's personal data where the child has reached the minimum 
 
 If we become aware that we have processed a child's personal data without the consent required by this Clause, we will take steps to obtain the necessary consent or, where that is not possible, to delete that information.
 
-## 12. Your Rights
+## 13. Your Rights
 
 Depending on the law that applies to you, you may have the right to: access, rectify, or erase your personal data; receive a copy of your personal data; restrict or object to our processing of your personal data; request that we transfer (port) your personal data to another entity; withdraw any consent you have given us; and lodge a complaint with a supervisory authority, including the Information Commissioner's Office (ICO), the UK's independent regulator for data protection, at [ico.org.uk](https://ico.org.uk), or another relevant supervisory authority in your country of residence, if applicable.
 
@@ -163,23 +169,23 @@ To exercise these rights, or to opt out of direct marketing communications or as
 
 Please note that if you do not provide the personal data we require, or you withdraw consent for its processing where consent is our legal basis, you may not be able to access or use the Service, or the part of it for which that information was required.
 
-## 13. Security
+## 14. Security
 
 We take the security of your personal data seriously and maintain technical and organisational measures designed to protect it against loss, misuse, and unauthorised access or alteration. These measures include encrypting data in transit between your device and our systems, and restricting access to personal data to the personnel and systems that need it to provide the Service, on a need-to-know basis.
 
-No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If you become aware of any actual or suspected security issue affecting your account or the Service, please contact us promptly using the details in Clause 16 (Contact Us).
+No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If you become aware of any actual or suspected security issue affecting your account or the Service, please contact us promptly using the details in Clause 17 (Contact Us).
 
-## 14. Data Breach Notification
+## 15. Data Breach Notification
 
 If a personal data breach occurs that is likely to result in a risk to your rights and freedoms, we will notify the Information Commissioner's Office (ICO) without undue delay and, where feasible, within 72 hours of becoming aware of it, in accordance with our obligations under the UK GDPR.
 
 Where a breach is likely to result in a high risk to your rights and freedoms, we will also notify you directly and without undue delay, describing the nature of the breach and the measures we have taken or propose to take to address it, unless an exemption under the UK GDPR applies (for example, because we have taken measures, such as encryption, that render the affected data unintelligible to any person not authorised to access it, or because notifying you individually would involve disproportionate effort, in which case we will instead make a public communication or take similarly effective measures).
 
-## 15. Governing Law
+## 16. Governing Law
 
-This Policy is governed by, and forms part of an agreement governed by, the laws of England and Wales, and is subject to Clause 16 of the Terms (Governing Law, Jurisdiction and Dispute Resolution), save that nothing in this Clause affects the application of UK data protection law to our processing of your personal data, or your right to lodge a complaint with a supervisory authority under Clause 12.
+This Policy is governed by, and forms part of an agreement governed by, the laws of England and Wales, and is subject to Clause 16 of the Terms (Governing Law, Jurisdiction and Dispute Resolution), save that nothing in this Clause affects the application of UK data protection law to our processing of your personal data, or your right to lodge a complaint with a supervisory authority under Clause 13.
 
-## 16. Contact Us
+## 17. Contact Us
 
 If you have any questions or concerns about how we process your personal data, please contact us at:
 
