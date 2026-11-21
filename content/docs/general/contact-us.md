@@ -6,6 +6,10 @@ type: Quick Reference
 
 Getting further support is easy, just look at the available support options below.
 
+:::tip[Support button]
+On Game Panel V2 (currently in beta, not yet rolled out to every account), you can also reach Discord, tickets, and the knowledgebase directly from the Support button in the panel.
+:::
+
 :::tip[Billing & Refunds]
 Billing enquiries and refund requests should be handled via our [Billing Panel Tickets](https://hrzn.link/billing), not Discord.
 :::
@@ -27,6 +31,10 @@ The `#community-support` channel is for addon or game-related questions, where f
 Discord tickets should be used for service-specific issues, where you think one of our team needs to step in.
 
 To open a ticket, go to the `#new-ticket` channel and select the correct department, then sit back while one of our team comes to assist.
+
+:::tip[Attaching console logs]
+On Game Panel V2 (currently in beta, not yet rolled out to every account), the console tab has a logging button, clicking it captures your console output up to that point into a log you can attach to your ticket. This is much more helpful to us than a screenshot or a copy-pasted snippet.
+:::
 
 ## Billing Panel Tickets
 

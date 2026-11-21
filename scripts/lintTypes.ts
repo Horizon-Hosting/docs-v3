@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 import { glob } from "glob";
 
-const VALID_TYPES = ["How To", "Quick Reference", "FAQ", "Common Issue", "Overview"];
+const VALID_TYPES = ["How To", "Quick Reference", "FAQ", "Common Issue", "Overview", "Policy"];
 
 interface Finding {
   file: string;

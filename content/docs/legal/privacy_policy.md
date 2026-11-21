@@ -1,5 +1,6 @@
 ---
 title: "Privacy Policy"
+type: Policy
 last_reviewed: 2026-07-06
 status: Accepted
 version: v1.1

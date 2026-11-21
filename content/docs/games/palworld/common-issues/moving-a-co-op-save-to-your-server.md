@@ -12,4 +12,10 @@ You've copied your co-op world save onto your dedicated server, but your charact
 
 This is expected. Co-op and dedicated servers assign player IDs differently, so a save copied over directly doesn't carry your character across.
 
-Use a save converter, such as [Physgun's Palworld Save Converter](https://physgun.com/tools/palworld-save-converter/), to convert your co-op save into a format that keeps your character, Pals, guild, and bases intact before uploading it.
+Use a save converter to remap your character's player ID to the one your dedicated server expects, which keeps your character, Pals, guild, and bases intact. [palworld-host-save-fix](https://github.com/xNul/palworld-host-save-fix) is a free, open-source tool that does this, and its README includes a step-by-step walkthrough for migrating a co-op save to a dedicated server.
+
+Once converted, upload the save to your server.
+
+:::warning[Back up before you convert]
+Save converters are community-made and experimental. Take a copy of both your co-op save and your server's existing save before running one, a failed conversion can leave a save unusable.
+:::

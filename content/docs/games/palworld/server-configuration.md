@@ -35,7 +35,8 @@ Palworld rewrites this file on shutdown, overwriting any changes made while the 
 | RCONPort               | Port RCON listens on. Needs its own [allocation](/general/changing-gameserver-port) to connect externally.| `25575`              |
 | RESTAPIEnabled         | Enables the REST API. Off by default.                                                                     | `True`               |
 | RESTAPIPort            | Port the REST API listens on. Needs its own [allocation](/general/changing-gameserver-port) to connect externally. | `8212`      |
-| CrossplayPlatforms     | Which platforms can connect. Default `(Steam,Xbox,PS5,Mac)`.                                              | `(Steam,Xbox)`       |
+| CrossplayPlatforms     | Which platforms can connect. Default `(Steam,Xbox,PS5,Mac)`, crossplay is on for all platforms out of the box. | `(Steam,Xbox)`       |
+| bUseAuth               | Verifies a connecting player's identity, and enforces Pocketpair's official ban list. On by default, we recommend leaving this on. | `True` |
 | bIsUseBackupSaveData   | Enables automatic in-game world backups. Increases disk usage.                                             | `True`               |
 
 ## Popular Game Balance settings

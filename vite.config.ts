@@ -7,6 +7,7 @@ import { nitro } from 'nitro/vite';
 import { globSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createGetUrl, getSlugs } from 'fumadocs-core/source';
+import { slugsToMarkdownPath } from './src/lib/source.shared';
 
 // Safely read the package.json file directly from node_modules bypassing export maps
 let optionalDeps: string[] = [];
@@ -20,7 +21,9 @@ try {
 }
 
 function getPrerenderRoutes() {
-  const routes: string[] = [];
+  // Server routes are only emitted into the static output if they're listed here,
+  // otherwise they 404 on GitHub Pages.
+  const routes: string[] = ['/sitemap.xml', '/llms.txt', '/llms-full.txt'];
   const getUrl = createGetUrl('');
 
   const entries = globSync('**/*.{md,mdx}', { cwd: 'content/docs' });
@@ -29,6 +32,7 @@ function getPrerenderRoutes() {
     const slugs = getSlugs(entry);
     routes.push(getUrl(slugs));
     routes.push(`/og/docs/${[...slugs, 'image.webp'].join('/')}`);
+    routes.push(slugsToMarkdownPath(slugs).url);
   }
 
   return routes;

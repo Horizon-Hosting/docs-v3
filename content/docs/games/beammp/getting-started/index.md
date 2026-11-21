@@ -45,7 +45,19 @@ To avoid file corruption and for the best speeds, we reccomend [using SFTP to tr
 
 ## Changing your servers map \[step]
 
-By default BeamMP comes with a set of pre-installed maps. To choose a map, you enter the maps path into the "Map" field of the startup section.
+By default BeamMP comes with a set of pre-installed maps.
+
+### Map Selector (Game Panel V2 Only)
+
+:::info[Still rolling out]
+Game Panel V2 is currently in beta and hasn't rolled out to every account yet. If you don't have a "Map Selector" page, use the Old Method below instead.
+:::
+
+Upload a map directly on the "Map Selector" page (either drag it in, or use the upload button), then pick it from the list of maps already on your server. Your "Map" startup value is updated for you, no path needed.
+
+### Old Method
+
+Enter the map's path into the "Map" field of the startup section instead.
 
 Below are the pre-installed map paths you can use:
 

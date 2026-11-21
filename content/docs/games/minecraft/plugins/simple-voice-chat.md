@@ -1,5 +1,5 @@
 ---
-title: Installing Simple Voice Chat
+title: Installing Simple Voice Chat (Plugin)
 description: How to install Simple Voice Chat on your Minecraft server.
 type: How To
 ---

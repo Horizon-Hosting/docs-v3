@@ -9,6 +9,24 @@ type: Quick Reference
 Changes made to `server.properties` require a server restart to take effect.
 :::
 
+## Startup Command (Game Panel V2 Only)
+
+:::info[Still rolling out]
+Game Panel V2 is currently in beta and hasn't rolled out to every account yet. If you don't have a Startup Command option, your command is set automatically based on the software you choose instead.
+:::
+
+Rather than one command being fixed by the software you choose, Game Panel V2 lets you pick which startup command your server uses. This is especially useful when importing an existing server, since you can match whatever command it already expects instead of being limited to one set by the old Software/egg switcher.
+
+| Preset | Command | Use for |
+| --------- | ----------- | ----------- |
+| Default | `java -Xms128M -XX:MaxRAMPercentage=95.0 -jar {{SERVER_JARFILE}}` | Vanilla, Paper, Spigot, Purpur, Fabric, Quilt, and proxy software (Velocity/BungeeCord) |
+| Forge / NeoForge | `java -Xms128M -XX:MaxRAMPercentage=95.0 @user_jvm_args.txt @libraries/net/neoforged/neoforge/{{LOADER_VERSION}}/unix_args.txt nogui` | Modern Forge and NeoForge installs that generate JVM argument files |
+| Start Script | `./run.sh` | Modpacks or imported servers that ship their own run script |
+
+:::warning[Won't start after a software change?]
+Picking the wrong preset for your software is a common cause of a server failing to boot after changing software or version. Double check it matches what your software actually needs.
+:::
+
 ## server.properties
 
 This file is located in your server's root directory and can be edited using [SFTP](/games/sftp) or the file manager.
