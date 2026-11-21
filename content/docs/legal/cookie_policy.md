@@ -1,16 +1,16 @@
 ---
 title: "Cookie Policy"
-last_reviewed: 2026-07-02
+last_reviewed: 2026-07-06
 status: Accepted
-version: v1.0
-last_updated: 2026-07-02
+version: v1.1
+last_updated: 2026-11-12
 ---
 
 **Horizon Hosting Limited (trading as "Horizon Hosting")**
 Company Number: 13693820
 Registered in England and Wales
 
-Last Updated: 2 July 2026
+Last Updated: 12 November 2026
 
 
 ---
@@ -46,9 +46,15 @@ Your consent is stored in a cookie named `hrzn_consent` on `.hrznhosting.com` an
 
 You may change or withdraw your consent at any time by clicking **Cookie settings** in the footer of any page.
 
-## 3. Cookies We Use
+## 3. Do Not Track
 
-### 3.1 Strictly Necessary
+Some web browsers transmit "Do Not Track" ("DNT") signals to websites. We do not alter our cookie or tracking practices in response to DNT signals. There is currently no consistent industry standard for honouring them, and no requirement under UK law — including the Privacy and Electronic Communications Regulations 2003 (PECR) — that we do so.
+
+If you wish to limit or opt out of non-essential cookies, please use our consent system described in Section 2 above. You can access it at any time by clicking **Cookie settings** in the footer of any page.
+
+## 4. Cookies We Use
+
+### 4.1 Strictly Necessary
 
 These cookies are essential for the Services to function and cannot be switched off. They do not require your consent under the Privacy and Electronic Communications Regulations 2003, as amended ("PECR"). They are set in response to actions you take, such as logging in or processing a payment.
 
@@ -61,7 +67,7 @@ These cookies are essential for the Services to function and cannot be switched 
 | `hrzn_consent` | Horizon Hosting | Stores your cookie consent preferences so you are not asked again. | 1 year |
 | `g_state` | Google | Supports the Sign-In with Google option on the billing portal login page, which you may use instead of an email address and password. | Session |
 
-### 3.2 Analytics
+### 4.2 Analytics
 
 These cookies help us understand how visitors use the Services, which pages are visited most, and where errors occur. All data collected is anonymised and aggregated. No information is used to identify individual users, and no data is shared with advertisers.
 
@@ -74,7 +80,7 @@ Analytics cookies are only set after you have given your consent. If you decline
 
 PECR, as amended by the Data (Use and Access) Act 2025, introduced a narrow exemption for cookies used solely for statistical purposes to improve a website. Because `posthog_ph_id` links your device across separate browsing sessions, we do not rely on this exemption and continue to treat all PostHog cookies as requiring your consent.
 
-## 4. Third-Party Cookies
+## 5. Third-Party Cookies
 
 When you use certain features of the Services, third parties may set their own cookies directly on your device. These are subject to the respective third party's own privacy and cookie policies. The third parties relevant to the Services are:
 
@@ -88,7 +94,7 @@ When you use certain features of the Services, third parties may set their own c
 
 We have no control over, and accept no responsibility for, the cookies set by these third parties.
 
-## 5. Legal Basis
+## 6. Legal Basis
 
 We rely on the following legal bases for setting cookies:
 
@@ -98,13 +104,13 @@ We rely on the following legal bases for setting cookies:
 
 Consent is recorded with a timestamp. We may ask you to re-consent if we make a material change to our cookie usage. Any consent recorded before the date of a material change will be treated as expired and you will be asked to confirm your preferences again.
 
-## 6. Changes to This Policy
+## 7. Changes to This Policy
 
 We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or the Services. The "Last Updated" date at the top of this page will be revised accordingly. If we make a material change to the cookies we use, we will update the consent required date and prompt all users to review and re-confirm their preferences.
 
 We encourage you to review this policy periodically.
 
-## 7. Contact Us
+## 8. Contact Us
 
 If you have any questions about this Cookie Policy, please contact us at:
 

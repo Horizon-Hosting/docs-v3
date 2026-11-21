@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { getSubFolderLinks, type CleanFolderData } from '@/server/docs';
+import { useTreeContext } from 'fumadocs-ui/contexts/tree';
+import { getSubFolderLinks } from '@/server/docs';
 
 interface SubFolderLinksProps {
 	path: string;
@@ -10,22 +10,9 @@ interface SubFolderLinksProps {
 }
 
 export function SubFolderLinks({ path, targetSlug }: SubFolderLinksProps) {
-	const [data, setData] = useState<CleanFolderData[]>([]);
-	const [loading, setLoading] = useState(true);
+	const data = getSubFolderLinks(useTreeContext().full.children, path, targetSlug);
 
-	useEffect(() => {
-		getSubFolderLinks({ data: { path, targetSlug } })
-			.then((res) => {
-				setData(res);
-				setLoading(false);
-			})
-			.catch((err) => {
-				console.error(err);
-				setLoading(false);
-			});
-	}, [path, targetSlug]);
-
-	if (loading || data.length === 0) return null;
+	if (data.length === 0) return null;
 
 	return (
 		<Cards>

@@ -3,14 +3,14 @@ title: "Support Policy"
 last_reviewed: 2026-07-02
 status: Accepted
 version: v1.0
-last_updated: 2026-07-02
+last_updated: 2026-11-12
 ---
 
 **Horizon Hosting Limited (trading as "Horizon Hosting")**
 Company Number: 13693820
 Registered in England and Wales
 
-Last Updated: 2 July 2026
+Last Updated: 12 November 2026
 
 
 ---
@@ -53,7 +53,7 @@ We may, at our discretion and on a reasonable endeavours basis, provide limited 
 
 ### 2.3 General
 
-The above descriptions are indicative and not exhaustive. Whether a particular request falls inside or outside scope, and the extent of any assistance we choose to provide, is determined at our sole discretion. Unless expressly agreed otherwise in writing, matters outside scope also include: data loss, corruption, or recovery beyond any standard backup arrangements expressly included in your Service (see Clause 17 of the Terms — User Data); hardware you own and locate within our facilities under a colocation arrangement, save for matters relating to power, connectivity, or physical access that we control, each of which is instead addressed in our Colocation Agreement; issues arising from third-party providers, networks, or services outside our control, including upstream connectivity, domain registrars, or DNS providers not operated by us; and security incidents or vulnerabilities arising from your own applications, credentials, or configuration.
+The above descriptions are indicative and not exhaustive. Whether a particular request falls inside or outside scope, and the extent of any assistance we choose to provide, is determined at our sole discretion. Unless expressly agreed otherwise in writing, matters outside scope also include: data loss, corruption, or recovery beyond any standard backup arrangements expressly included in your Service (see Clause 17 of the Terms — User Data); hardware you own and locate within our facilities under a colocation arrangement, save for matters relating to power, connectivity, or physical access that we control; issues arising from third-party providers, networks, or services outside our control, including upstream connectivity, domain registrars, or DNS providers not operated by us; and security incidents or vulnerabilities arising from your own applications, credentials, or configuration.
 
 Where a request is out of scope, we may still choose to assist on a discretionary or chargeable basis; doing so does not create an ongoing obligation to provide the same assistance in future.
 

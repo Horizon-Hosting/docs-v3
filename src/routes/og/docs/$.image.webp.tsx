@@ -25,7 +25,6 @@ export const Route = createFileRoute('/og/docs/$/image/webp')({
 
 				const { searchParams } = new URL(request.url);
 
-				// FIX: Extract fallback text from Fumadocs metadata if query params don't override them
 				const docTitle = page.data.title ?? 'Horizon docs';
 				const docDescription = page.data.description ?? undefined;
 
@@ -34,12 +33,11 @@ export const Route = createFileRoute('/og/docs/$/image/webp')({
 					? clamp(searchParams.get('description') ?? docDescription!, 140)
 					: undefined;
 
-				const eyebrow = searchParams.get('eyebrow') ?? 'Documentation';
 				const url = searchParams.get('url') ?? 'hrzn.link/docs';
 
 				// Return the generated Image response directly from the API handler
 				return ogImageResponse(
-					<OgCard title={title} description={description} eyebrow={eyebrow} url={url} />,
+					<OgCard title={title} description={description} url={url} />,
 					{
 						width: 1200,
 						height: 630,

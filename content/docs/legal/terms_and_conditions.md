@@ -3,20 +3,20 @@ title: "Terms and Conditions"
 last_reviewed: 2026-07-02
 status: Accepted
 version: v1.0
-last_updated: 2026-07-02
+last_updated: 2026-11-12
 ---
 
 **Horizon Hosting Limited (trading as "Horizon Hosting")**
 Company Number: 13693820
 Registered in England and Wales
 
-Last Updated: 2 July 2026
+Last Updated: 12 November 2026
 
 
 ---
 
 These Terms and Conditions (the "Terms") form a legally binding agreement between you and Horizon Hosting Limited, a company registered in England and Wales under company number 13693820, trading as "Horizon Hosting". Capitalised terms used in these Terms have the meanings given to them in our [Glossary](/legal/glossary), which forms part of, and is incorporated by reference into, these Terms.
-	
+
 These Terms govern your access to and use of our Websites and the Services (each as defined in the Glossary).
 
 By accessing the Websites or using the Services, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree with these Terms, you must not access the Websites or use the Services, and you must discontinue use immediately.
@@ -92,11 +92,9 @@ The following policies form part of, and are incorporated by reference into, the
 * **Cookie Policy** — explains how we use cookies and similar tracking technologies on the Websites.
 * **Refund Policy** — sets out your rights to cancel and obtain refunds.
 * **Support Policy** — sets out the channels and scope of support we provide.
-* **Service Level Agreement (SLA)** — together with the SLA Schedule applicable to your Service (for example, our VPS, Dedicated Server, or Game Services Schedules), sets out any availability commitments, response and resolution time targets, and service credits, where applicable to your Service.
-* **Colocation Agreement** — where applicable, governs the terms on which you may install and maintain your own equipment at our facilities.
+* **Service Level Agreement (SLA)** — where applicable to your Service, sets out any response and resolution time commitments.
 * **Intellectual Property Policy** — sets out how third-party IP and infringement reports are handled, how we treat ideas and suggestions you send us, and the terms that apply to reviews, testimonials, and other content you submit for us to publish.
 * **Affiliate Payout & Balance Terms** — governs eligibility, commission balances, and withdrawals for our affiliate programme, where you choose to participate.
-* **Contributor Licence Agreement** — where you submit a contribution to an open-source project we maintain, this separate agreement (not incorporated into these Terms) governs the licence you grant us in that contribution.
 
 In the event of any conflict between these Terms and a policy referenced above, the specific policy will govern in relation to the subject matter it covers.
 

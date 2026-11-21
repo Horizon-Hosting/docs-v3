@@ -3,14 +3,14 @@ title: "Glossary"
 last_reviewed: 2026-07-02
 status: Accepted
 version: v1.0
-last_updated: 2026-07-02
+last_updated: 2026-11-12
 ---
 
 **Horizon Hosting Limited (trading as "Horizon Hosting")**
 Company Number: 13693820
 Registered in England and Wales
 
-Last Updated: 2 July 2026
+Last Updated: 12 November 2026
 
 ---
 
