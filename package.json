@@ -5,7 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && bun ./scripts/writeRedirects.ts",
     "start": "vite preview",
     "preview": "vite preview",
     "types:check": "fumadocs-mdx && tsc --noEmit",
