@@ -1,5 +1,6 @@
 ---
 title: "Intellectual Property Policy"
+type: Policy
 last_reviewed: 2026-07-02
 status: Accepted
 version: v1.0
